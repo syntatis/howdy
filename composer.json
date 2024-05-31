@@ -1,0 +1,63 @@
+{
+	"name": "syntatis/wp-starter-plugin",
+	"description": "This is a description of the plugin.",
+	"type": "wordpress-plugin",
+	"keywords": [
+		"wordpress",
+		"plugin",
+		"boilerplate"
+	],
+	"homepage": "https://github.com/syntatis/wp-starter-plugin",
+	"authors": [
+		{
+			"name": "Thoriq Firdaus",
+			"homepage": "https://github.com/tfirdaus"
+		}
+	],
+	"license": "GPL-2.0-or-later",
+	"autoload": {
+		"psr-4": {
+			"WPStarterPlugin\\": "app/"
+		}
+	},
+	"require": {
+		"php": ">=7.4",
+		"syntatis/utils": "^1.0",
+		"syntatis/wp-helpers": "^0.1",
+		"syntatis/wp-hook": "^2.0",
+		"syntatis/wp-option": "^2.1"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"phpcompatibility/php-compatibility": "^9.3",
+		"symfony/var-dumper": "^5.4",
+		"syntatis/coding-standard": "^1.1"
+	},
+	"scripts": {
+		"scope": [
+			"@composer require bamarni/composer-bin-plugin",
+			"@composer bin php-scoper require humbug/php-scoper",
+			"@composer install --no-dev --prefer-dist",
+			"php-scoper add-prefix --output-dir=dist-autoload --force --quiet",
+			"@composer dump-autoload --working-dir dist-autoload --classmap-authoritative",
+			"@composer remove bamarni/composer-bin-plugin"
+		],
+		"phpcs:fix": "phpcbf",
+		"phpcs": "phpcs"
+	},
+	"prefer-stable": true,
+	"config": {
+		"sort-packages": true,
+		"classmap-authoritative": true,
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"bamarni/composer-bin-plugin": true
+		}
+	},
+	"extra": {
+		"bamarni-bin": {
+			"bin-links": true,
+			"forward-command": true
+		}
+	}
+}

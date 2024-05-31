@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wp-starter-plugin/greeting",
+	"version": "1.0.0",
+	"title": "Greeting",
+	"category": "widgets",
+	"textdomain": "wp-starter-plugin",
+	"render": "file:./render.php",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./styles.scss",
+	"keywords": [ "greeting" ]
+}

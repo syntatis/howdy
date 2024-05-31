@@ -1,0 +1,28 @@
+# OS generated files #
+######################
+.DS_Store
+Thumbs.db
+
+# Logs and databases #
+######################
+*.sql
+*.log
+
+# Compiled source #
+###################
+*.tar.gz
+*.zip
+dist
+dist-*
+
+# Dependency #
+##########################
+node_modules/
+vendor/
+vendor-*
+composer.lock
+package-lock.*
+
+# Temporary #
+#############
+tmp/
