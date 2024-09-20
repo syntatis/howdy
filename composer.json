@@ -1,13 +1,12 @@
 {
-	"name": "syntatis/wp-starter-plugin",
-	"description": "This is a description of the plugin.",
+	"name": "syntatis/howdy",
+	"description": "Your next modern WordPress plugin project, made easy",
 	"type": "wordpress-plugin",
 	"keywords": [
 		"wordpress",
 		"plugin",
 		"boilerplate"
 	],
-	"homepage": "https://github.com/syntatis/wp-starter-plugin",
 	"authors": [
 		{
 			"name": "Thoriq Firdaus",
@@ -16,48 +15,79 @@
 	],
 	"license": "GPL-2.0-or-later",
 	"autoload": {
+		"files": [
+			"inc/helpers.php"
+		],
 		"psr-4": {
-			"WPStarterPlugin\\": "app/"
+			"PluginName\\": "app/"
 		}
 	},
+	"repositories": [
+		{
+			"type": "path",
+			"url": "../codex",
+			"options": {
+				"symlink": false
+			}
+		},
+		{
+			"type": "path",
+			"url": "../composer-project-plugin"
+		}
+	],
 	"require": {
 		"php": ">=7.4",
-		"syntatis/utils": "^1.0",
-		"syntatis/wp-helpers": "^0.1",
-		"syntatis/wp-hook": "^2.0",
-		"syntatis/wp-option": "^2.1"
+		"syntatis/codex": "@dev"
 	},
 	"require-dev": {
+		"bamarni/composer-bin-plugin": "^1.8",
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-		"phpcompatibility/php-compatibility": "^9.3",
-		"symfony/var-dumper": "^5.4",
-		"syntatis/coding-standard": "^1.1"
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"syntatis/coding-standard": "^1.4",
+		"syntatis/composer-project-plugin": "@dev"
 	},
-	"scripts": {
-		"scope": [
-			"@composer require bamarni/composer-bin-plugin",
-			"@composer bin php-scoper require humbug/php-scoper",
-			"@composer install --no-dev --prefer-dist",
-			"php-scoper add-prefix --output-dir=dist-autoload --force --quiet",
-			"@composer dump-autoload --working-dir dist-autoload --classmap-authoritative",
-			"@composer remove bamarni/composer-bin-plugin"
-		],
-		"phpcs:fix": "phpcbf",
-		"phpcs": "phpcs"
-	},
+	"minimum-stability": "dev",
 	"prefer-stable": true,
+	"scripts": {
+		"phpcs:fix": "phpcbf",
+		"phpcs": "phpcs",
+		"post-create-project-cmd": [
+			"@composer syntatis:project init",
+			"@composer u --lock",
+			"@composer scope"
+		],
+		"scope": [
+			"@composer bin php-scoper require -W humbug/php-scoper",
+			"@composer i --no-dev --no-scripts",
+			"php-scoper add-prefix --output-dir=dist-autoload --force --quiet",
+			"@composer dump -d dist-autoload",
+			"@composer i --no-scripts"
+		]
+	},
+	"scripts-descriptions": {
+		"scope": "Scope the autoloader to prevent conflicts with other plugins",
+		"phpcs": "Check the codebase for coding standards violations",
+		"phpcs:fix": "Fix coding standards violations"
+	},
 	"config": {
-		"sort-packages": true,
-		"classmap-authoritative": true,
 		"allow-plugins": {
+			"bamarni/composer-bin-plugin": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
-			"bamarni/composer-bin-plugin": true
-		}
+			"syntatis/composer-project-plugin": true
+		},
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true
 	},
 	"extra": {
 		"bamarni-bin": {
 			"bin-links": true,
 			"forward-command": true
+		},
+		"syntatis": {
+			"project": {
+				"name": "howdy"
+			}
 		}
 	}
 }

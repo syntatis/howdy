@@ -2,11 +2,13 @@
 <ruleset
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd"
-	name="PHP Coding Standard"
+	name="PHP Coding Standards"
 	>
-	<description>PHP Coding Standard</description>
+	<description>PHP Coding Standards for modern WordPress plugin</description>
 
 	<arg name="basepath" value="."/>
+	<arg name="extensions" value="php"/>
+	<arg name="tab-width" value="4"/>
 
 	<!-- Ignore warnings, show progress of the run and show sniff names -->
 	<arg value="nps"/>
@@ -14,25 +16,52 @@
 	<!-- The directories to apply the rules -->
 	<file>scoper.inc.php</file>
 	<file>uninstall.php</file>
-	<file>wp-starter-plugin.php</file>
-	<file>./app/</file>
+	<file>plugin-name.php</file>
+	<file>./app</file>
+	<file>./inc</file>
 
 	<!-- Show the warning but exit with 0. The Warning is fine -->
 	<config name="ignore_warnings_on_exit" value="1"/>
 
-	<!-- Check for cross-version support for PHP 7.4 or higher. Requires PHPCompatibility -->
+	<!-- Check for cross-version support for WordPress 5.8 or higher. -->
+	<config name="minimum_wp_version" value="5.8"/>
+
+	<!-- Check for cross-version support for PHP 7.4 or higher. Requires PHPCompatibilityWP -->
 	<config name="testVersion" value="7.4-"/>
 
-	<!-- Include full Doctrine Coding Standard -->
-	<rule ref="Syntatis"/>
+	<!-- Rulesets -->
+	<rule ref="SyntatisWP"/>
 	<rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
 		<properties>
 			<property name="rootNamespaces" type="array">
-				<element key="app" value="WPStarterPlugin"/>
+				<element key="app" value="PluginName"/>
 			</property>
 		</properties>
 	</rule>
-
-	<!-- Enable PHPCompatibility ruleset to enable version compatibility test -->
-	<rule ref="PHPCompatibility"/>
+	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes.DeclareStrictTypesMissing">
+		<exclude-pattern>/inc/bootstrap/providers.php</exclude-pattern>
+	</rule>
+	<rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedName">
+		<exclude-pattern>/inc/bootstrap/providers.php</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="plugin-name"/>
+			</property>
+		</properties>
+	</rule>
+	<rule ref="Generic.WhiteSpace.ScopeIndent">
+		<properties>
+			<property name="exact" value="false"/>
+			<property name="indent" value="4"/>
+			<property name="tabIndent" value="true"/>
+			<property name="ignoreIndentationTokens" type="array">
+				<element value="T_HEREDOC"/>
+				<element value="T_NOWDOC"/>
+				<element value="T_INLINE_HTML"/>
+			</property>
+		</properties>
+	</rule>
+	<rule ref="PHPCompatibilityWP"/>
 </ruleset>

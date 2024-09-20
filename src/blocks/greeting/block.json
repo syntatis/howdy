@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "wp-starter-plugin/greeting",
+	"name": "plugin-name/greeting",
 	"version": "1.0.0",
 	"title": "Greeting",
 	"category": "widgets",
-	"textdomain": "wp-starter-plugin",
+	"textdomain": "plugin-name",
 	"render": "file:./render.php",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./styles.scss",

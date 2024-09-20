@@ -1,7 +1,7 @@
 {
-	"name": "@syntatis/wp-starter-plugin",
+	"name": "@syntatis/howdy",
 	"version": "1.0.0",
-	"description": "This is a description of the plugin.",
+	"description": "Your next modern WordPress plugin project, made easy",
 	"author": {
 		"name": "Thoriq Firdaus",
 		"url": "https://github.com/tfirdaus"
@@ -10,30 +10,32 @@
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"wordpress",
-		"plugin"
+		"plugin",
+		"boilerplate"
 	],
-	"homepage": "https://github.com/syntatis/wp-starter-plugin#readme",
-	"repository": {
-		"type": "git",
-		"homepage": "https://github.com/syntatis/wp-starter-plugin.git"
-	},
-	"bugs": {
-		"url": "https://github.com/syntatis/wp-starter-plugin/issues"
-	},
 	"engines": {
-		"node": "^18",
+		"node": ">=18",
 		"npm": ">=9"
 	},
+	"files": [
+		"app",
+		"dist-autoload",
+		"dist",
+		"inc",
+		"index.php",
+		"uninstall.php",
+		"plugin-name.php"
+	],
 	"dependencies": {
-		"@syntatis/wp-classic-components": "^0.1.0-alpha.7",
-		"@wordpress/api-fetch": "^6.55.0",
-		"@wordpress/dom-ready": "^3.58.0",
-		"@wordpress/i18n": "^4.58.0",
+		"@syntatis/kubrick": "^0.1.0-beta.3",
+		"@wordpress/api-fetch": "^7.3.0",
+		"@wordpress/dom-ready": "^4.3.0",
+		"@wordpress/i18n": "^5.3.0",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^27.9.0"
+		"@wordpress/scripts": "^27.0.0"
 	},
 	"scripts": {
 		"start": "wp-scripts start --output-path=dist",
@@ -45,7 +47,6 @@
 		"format": "wp-scripts format",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses"
 	}
 }

@@ -1,10 +1,9 @@
 import { useBlockProps } from '@wordpress/block-editor';
-import { getOption } from '../../helpers/option';
+import { useSettings } from '../../settings/useSettings';
 
 export default function Edit() {
+	const { getOption } = useSettings();
 	return (
-		<p { ...useBlockProps() }>
-			{ getOption( 'wp_starter_plugin_greeting' ) }
-		</p>
+		<p { ...useBlockProps() }>{ getOption( 'plugin_name_greeting' ) }</p>
 	);
 }

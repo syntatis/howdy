@@ -1,136 +1,150 @@
 <?php
 
-// phpcs:disable -- Generic.Files.InlineHTML.Found
-
 declare(strict_types=1);
 
-namespace WPStarterPlugin;
+namespace PluginName;
 
-use WPStarterPlugin\Vendor\Syntatis\WPHook\Contract\WithHook;
-use WPStarterPlugin\Vendor\Syntatis\WPHook\Hook;
-use WPStarterPlugin\Vendor\Syntatis\WPOption\Option;
-use WPStarterPlugin\Vendor\Syntatis\WPOption\Registry;
+use PluginName\Vendor\Codex\Contracts\Hookable;
+use PluginName\Vendor\Codex\Facades\App;
+use PluginName\Vendor\Codex\Foundation\Hooks\Hook;
+use PluginName\Vendor\Codex\Foundation\Settings\Registry;
+use WP_REST_Request;
+
+use function array_filter;
+use function array_keys;
+use function in_array;
+use function sprintf;
+
+use const ARRAY_FILTER_USE_KEY;
 
 /**
- * This class manages the plugin's settings, including their registration,
- * loading, and rendering within the WordPress admin interface. It handles
- * options initialization, enqueuing scripts and styles, and integrating
- * with the WordPress REST API.
+ * The Settings class.
+ *
+ * This class serves as an example on how to manage the plugins settings.
+ * It shows how to register the options, enqueuing the scripts and
+ * the styles, and rendering the settings page. Feel free to
+ * remove the class or modify it to suit your needs.
  */
-class Settings implements WithHook
+class Settings implements Hookable
 {
-	private Enqueue $enqueue;
-
-	private Registry $registry;
-
-	/**
-     * The option name prefix used to ensure unique and consistent option names.
-     */
-	private string $optionPrefix = 'wp_starter_plugin_';
-
-	/**
-     * The group name for registering plugin settings.
-     *
-     * @see https://developer.wordpress.org/reference/functions/register_setting/
-     */
-	private string $group = 'wp_starter_plugin';
-
-	/**
-     * The filename of the distribution files (JavaScript and Stylesheet) for the
-	 * settings page.
-     */
-	private string $distFile = 'components-settings';
-
-	/**
-     * The initial settings values loaded on page load. Defaults are used if not
-	 * set in the database.
-     */
-	private ?string $values = null;
-
-	public function __construct(Enqueue $enqueue)
-	{
-		/**
-         * Define the plugin options and their default values in the registry.
-         * This ensures options are correctly stored, retrieved, and defaulted.
-         */
-		$this->registry = new Registry([
-			(new Option('greeting', 'string'))
-				->setDefault('Hello World!')
-				->apiEnabled(true)
-		]);
-		$this->registry->setPrefix($this->optionPrefix);
-		$this->enqueue = $enqueue;
-	}
-
-	/**
-	 * @inheritDoc
-	 */
 	public function hook(Hook $hook): void
 	{
-		$register = fn () => $this->registerSettings();
-	
-		$hook->addAction('rest_api_init', $register);
-		$hook->addAction('admin_init', $register);
-		$hook->addAction('admin_menu', fn () => $this->addMenu());
-		$hook->addAction('admin_enqueue_scripts', fn (string $hook) => $this->enqueueScripts($hook));
-
-		$this->registry->hook($hook);
+		$hook->addAction('admin_menu', [$this, 'addMenu']);
+		$hook->addAction('admin_enqueue_scripts', [$this, 'enqueueAdminScripts']);
 	}
 
 	/**
-     * Add the settings menu to the WordPress admin interface.
-     */
-	private function addMenu(): void
+	 * Add the settings menu on WordPress admin.
+	 */
+	public function addMenu(): void
 	{
 		add_submenu_page(
 			'options-general.php', // Parent slug.
-			__('Starter Plugin Settings', 'wp-starter-plugin'),
-			__('Starter Plugin', 'wp-starter-plugin'),
+			__('Howdy Settings', 'plugin-name'),
+			__('Howdy', 'plugin-name'),
 			'manage_options',
-			WP_STARTER_PLUGIN_NAME,
-			fn () => $this->renderPage(),
+			App::name(),
+			[$this, 'renderPage'],
 		);
 	}
 
-	 /**
-     * Enqueue scripts and styles for the settings page.
-     *
-     * @param string $adminPage The current admin page.
-     */
-	private function enqueueScripts(string $adminPage): void
+	/**
+	 * Render the plugin settings page.
+	 *
+	 * Called when user navigates to the plugin settings page. It will render
+	 * only with these HTML. The settings form, inputs, buttons will be
+	 * rendered with React components.
+	 *
+	 * @see ./src/settings/Page.jsx
+	 */
+	public function renderPage(): void
 	{
-		if (
-			$adminPage === 'settings_page_' . WP_STARTER_PLUGIN_NAME ||
-			$adminPage === 'post.php' ||
-			$adminPage === 'post-new.php'
-		) {
-			$this->enqueue->addStyle($this->distFile);
-			$this->enqueue->addScript($this->distFile);
-			$this->enqueue->addInlineScript(
-				$this->distFile,
-				'window.__wpStarterPlugin = Object.assign(window.__wpStarterPlugin||{},{"settings":' . $this->values . '})',
-				'before'
-			);
-			$this->enqueue->all();
-		}
-	}
-
-	private function registerSettings(): void
-	{
-		$this->registry->register($this->group);
-		$this->values = json_encode($this->registry);
-	}
-
-	private function renderPage(): void
-	{
-		if (! current_user_can('manage_options')) {
-			return;
-		}
+		// phpcs:disable Generic.Files.InlineHTML.Found
 		?>
 		<div class="wrap">
 			<h1><?php echo esc_html(get_admin_page_title()); ?></h1>
-			<div id="wp-starter-plugin-settings"></div>
+			<div id="<?php echo esc_attr(App::name()); ?>-settings"></div>
+			<noscript>
+				<p>
+					<?php esc_html_e('This setting page requires JavaScript to be enabled in your browser. Please enable JavaScript and reload the page.', 'plugin-name'); ?>
+				</p>
+			</noscript>
 		</div>
 		<?php
+		// phpcs:enable
+	}
+
+	/** @param string $adminPage The current admin page. */
+	public function enqueueAdminScripts(string $adminPage): void
+	{
+		/**
+		 * List of admin pages where the plugin scripts and stylesheet should load.
+		 */
+		$adminPages = [
+			'settings_page_' . App::name(),
+			'post.php',
+			'post-new.php',
+		];
+
+		if (! in_array($adminPage, $adminPages, true)) {
+			return;
+		}
+
+		$scriptHandle = App::name() . '-settings';
+		$scriptAsset = include plugin_dir_path('/dist/settings/index.asset.php');
+
+		wp_enqueue_style(
+			$scriptHandle,
+			plugin_dir_url('/dist/settings/index.css'),
+			[],
+			$scriptVersion ?? null,
+		);
+
+		wp_enqueue_script(
+			$scriptHandle,
+			plugin_dir_url('/dist/settings/index.js'),
+			$scriptAsset['dependencies'] ?? [],
+			$scriptVersion ?? null,
+			true,
+		);
+
+		wp_add_inline_script(
+			$scriptHandle,
+			$this->getInlineScript(),
+			'before',
+		);
+
+		wp_set_script_translations($scriptHandle, 'plugin-name');
+	}
+
+	/**
+	 * Provide the inline script content.
+	 */
+	public function getInlineScript(): string
+	{
+		$setting = App::settings('general');
+
+		if (! $setting instanceof Registry) {
+			return '';
+		}
+
+		$request = new WP_REST_Request('GET', '/wp/v2/settings');
+		$response = rest_do_request($request);
+
+		/**
+		 * Filter the response data to only include those registered in the plugin
+		 * settings.
+		 */
+		$keys = array_keys($setting->getRegistered());
+		$data = array_filter(
+			$response->get_data(),
+			static fn ($key): bool => in_array($key, $keys, true),
+			ARRAY_FILTER_USE_KEY,
+		);
+
+		return sprintf(
+			'wp.apiFetch.use( wp.apiFetch.createPreloadingMiddleware( %s ) )',
+			wp_json_encode(['/wp/v2/settings' => ['body' => $data]]),
+		);
 	}
 }
