@@ -33,7 +33,7 @@ Once you've input all these details, it will run a command to scope the plugin d
 > This command will create the project in the directory named `awesome-plugin` instead.
 > For more information, see [Composer CLI documentation on creating a project](https://getcomposer.org/doc/03-cli.md#create-project).
 
-Once the project setup is complete, run the following command to start compiling the assets, like the stylesheet and the JavaScript files. It will watch for the changes within the files and recompile them automatically.
+Once the project setup is complete, run the following command within your plugin directory to start compiling the assets, like the stylesheets and the JavaScript files. It will also watch for the changes within the files and recompile them automatically.
 
 ```bash
 npm install
