@@ -5,6 +5,12 @@
 
 Provides a basic structure with pre-configured tools, helping you start developing a new WordPress plugin with modern approaches without the hassle of setting up everything from scratch.
 
+## Requirements
+
+- PHP 7.4 or higher
+- Node.js 18 or higher
+- [Composer](https://getcomposer.org/)
+
 ## Usage
 
 To start a new plugin project using this boilerplate, run:
