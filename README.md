@@ -1,4 +1,4 @@
-# ⚡ howdy
+# 👋 howdy
 
 > [!CAUTION]
 > This boilerplate is currently in active development. It is not recommended for production use *just yet*.
