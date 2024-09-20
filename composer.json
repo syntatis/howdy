@@ -1,6 +1,6 @@
 {
 	"name": "syntatis/howdy",
-	"description": "Your next modern WordPress plugin project, made easy",
+	"description": "Your next modern WordPress plugin project",
 	"type": "wordpress-plugin",
 	"keywords": [
 		"wordpress",
@@ -22,29 +22,16 @@
 			"PluginName\\": "app/"
 		}
 	},
-	"repositories": [
-		{
-			"type": "path",
-			"url": "../codex",
-			"options": {
-				"symlink": false
-			}
-		},
-		{
-			"type": "path",
-			"url": "../composer-project-plugin"
-		}
-	],
 	"require": {
 		"php": ">=7.4",
-		"syntatis/codex": "@dev"
+		"syntatis/codex": "dev-main"
 	},
 	"require-dev": {
 		"bamarni/composer-bin-plugin": "^1.8",
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
 		"phpcompatibility/phpcompatibility-wp": "^2.1",
 		"syntatis/coding-standard": "^1.4",
-		"syntatis/composer-project-plugin": "@dev"
+		"syntatis/composer-project-plugin": "dev-main"
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
