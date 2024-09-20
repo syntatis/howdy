@@ -3,7 +3,7 @@
 > [!CAUTION]
 > This boilerplate is currently in active development. It is not recommended for production use *just yet*.
 
-Provides a basic structure with pre-configured tools, helping you start developing a new WordPress plugin with modern approaches in PHP such as Autoloading with Composer, Namespace with PSR-4 standard, Namespace scoping, etc. without the hassle of setting up everything from scratch.
+Provides a basic structure with pre-configured tools, helping you start developing a new WordPress plugin with modern approaches in PHP such as [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/) with Composer, Namespace scoping, Dependency Injection (DI) Container etc. without the hassle of setting up everything from scratch.
 
 ## Requirements
 
