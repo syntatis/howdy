@@ -1,6 +1,6 @@
 /**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
+ * `useBlockProps` hook helps manage and apply essential props on the block
+ * wrapper element, such as the class names, styles, and other attributes.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */

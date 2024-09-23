@@ -2,8 +2,4 @@
  * Styles applied on the front-end.
  */
 
-.wp-block-plugin-name-static {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
-}
+@use './editor.scss';

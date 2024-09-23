@@ -1,0 +1,9 @@
+# Blocks 
+
+This is the directory where you can add custom blocks for your plugin. Each block should have its own directory with the `block.json` file defining as well as the scripts and the files needed for the block. 
+
+To learn more about blocks, you can check the [WordPress Block Editor Handbook](https://developer.wordpress.org/block-editor/) and the following resource in Youtube should help you get started with building your first block.
+
+### Developer Hours: Build your first WordPress block
+
+[![Developer Hours: Build your first WordPress block](http://img.youtube.com/vi/zSU-JOGDcGs/0.jpg)](https://www.youtube.com/watch?v=zSU-JOGDcGs)

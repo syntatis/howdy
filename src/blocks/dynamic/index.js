@@ -1,5 +1,6 @@
 /**
- * Registers a new block provided a unique name and an object defining its behavior.
+ * Registers a new block provided a unique name and an object defining its
+ * behaviors.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */

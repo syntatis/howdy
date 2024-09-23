@@ -1,13 +1,13 @@
 /**
- * Retrieves the translation of text.
+ * Retrieves functions to make the text translatable.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
 
 /**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
+ * `useBlockProps` hook helps manage and apply essential props on the block
+ * wrapper element, such as the class names, styles, and other attributes.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
@@ -16,7 +16,8 @@ import { useBlockProps } from '@wordpress/block-editor';
 /**
  * Styles applied in the editor.
  *
- * Files will be processed with Webpack and will automatically be loaded in the editor.
+ * The file will be processed with Webpack and automatically be enqueued in
+ * the editor.
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
@@ -33,7 +34,7 @@ import './editor.scss';
 export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
-			{ __( 'Todo List hello from the editor!', 'plugin-name' ) }
+			{ __( 'Hello from the editor!', 'plugin-name' ) }
 		</p>
 	);
 }

@@ -21,5 +21,5 @@
  */
 
 /* eslint-disable no-console */
-console.log( 'Hello World! (from "view.js")' );
+console.log( 'Hello from the front-end!' );
 /* eslint-enable no-console */
