@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "plugin-name/greeting",
+	"name": "plugin-name/dynamic-block",
 	"version": "1.0.0",
-	"title": "Greeting",
+	"title": "Dynamic Block",
 	"category": "widgets",
 	"textdomain": "plugin-name",
 	"render": "file:./render.php",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./styles.scss",
-	"keywords": [ "greeting" ]
+	"keywords": [ "dynamic" ]
 }
