@@ -1,9 +1,9 @@
 # 👋 howdy
 
 > [!CAUTION]
-> This boilerplate is currently in active development. It is not recommended for production use *just yet*.
+> This project is currently in active development. It is not recommended for production use *just yet*.
 
-Provides an opinionated structure with pre-configured tools, helping you start developing a new WordPress plugin with some common (modern) approaches in PHP such as [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/) with [Composer](https://getcomposer.org/), [PHP Code Sniffer (PHPCS)](https://github.com/PHPCSStandards/PHP_CodeSniffer), Namespace scoping, and Dependency Injection (DI) Container without the hassle of setting up everything from scratch.
+**Howdy** is a WordPress plugin starter kit. It provides an opinionated structure with pre-configured tools, helping you start developing a new WordPress plugin with some common (modern) approaches in PHP such as [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/) with [Composer](https://getcomposer.org/), [PHP Code Sniffer (PHPCS)](https://github.com/PHPCSStandards/PHP_CodeSniffer), Namespace scoping, and Dependency Injection (DI) Container without the hassle of setting up everything from scratch.
 
 ## Requirements
 
