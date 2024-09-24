@@ -19,7 +19,7 @@
 			"inc/helpers.php"
 		],
 		"psr-4": {
-			"PluginName\\": "app/"
+			"Foo\\": "app/"
 		}
 	},
 	"require": {
@@ -30,8 +30,8 @@
 		"bamarni/composer-bin-plugin": "^1.8",
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
 		"phpcompatibility/phpcompatibility-wp": "^2.1",
-		"syntatis/coding-standard": "^1.4",
-		"syntatis/composer-project-plugin": "dev-main"
+		"syntatis/codex-companion": "dev-main",
+		"syntatis/coding-standard": "^1.4"
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
@@ -39,7 +39,7 @@
 		"phpcs:fix": "phpcbf",
 		"phpcs": "phpcs",
 		"post-create-project-cmd": [
-			"@composer syntatis:project init",
+			"@composer codex:project init",
 			"@composer u --lock",
 			"@composer scope"
 		],
@@ -60,7 +60,7 @@
 		"allow-plugins": {
 			"bamarni/composer-bin-plugin": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
-			"syntatis/composer-project-plugin": true
+			"syntatis/codex-companion": true
 		},
 		"optimize-autoloader": true,
 		"preferred-install": "dist",
@@ -71,7 +71,7 @@
 			"bin-links": true,
 			"forward-command": true
 		},
-		"syntatis": {
+		"codex": {
 			"project": {
 				"name": "howdy"
 			}
