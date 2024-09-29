@@ -6,7 +6,7 @@
  */
 
 import apiFetch from '@wordpress/api-fetch';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from '@wordpress/element';
 
 const preloaded = await apiFetch( {
 	path: '/wp/v2/settings',
