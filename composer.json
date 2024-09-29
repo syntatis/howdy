@@ -19,12 +19,13 @@
 			"inc/helpers.php"
 		],
 		"psr-4": {
-			"Foo\\": "app/"
+			"PluginName\\": "app/"
 		}
 	},
 	"require": {
 		"php": ">=7.4",
-		"syntatis/codex": "dev-main"
+		"syntatis/codex": "dev-main",
+		"syntatis/codex-settings-provider": "dev-main"
 	},
 	"require-dev": {
 		"bamarni/composer-bin-plugin": "^1.8",

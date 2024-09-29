@@ -7,7 +7,7 @@ namespace PluginName;
 use PluginName\Vendor\Codex\Contracts\Hookable;
 use PluginName\Vendor\Codex\Facades\App;
 use PluginName\Vendor\Codex\Foundation\Hooks\Hook;
-use PluginName\Vendor\Codex\Foundation\Settings\Registry;
+use PluginName\Vendor\Codex\Settings\Settings;
 use WP_REST_Request;
 
 use function array_filter;
@@ -18,15 +18,22 @@ use function sprintf;
 use const ARRAY_FILTER_USE_KEY;
 
 /**
- * The Settings class.
+ * The SettingPage class.
  *
  * This class serves as an example on how to manage the plugins settings.
  * It shows how to register the options, enqueuing the scripts and
  * the styles, and rendering the settings page. Feel free to
  * remove the class or modify it to suit your needs.
  */
-class Settings implements Hookable
+class SettingPage implements Hookable
 {
+	private Settings $settings;
+
+	public function __construct(Settings $settings)
+	{
+		$this->settings = $settings;
+	}
+
 	public function hook(Hook $hook): void
 	{
 		$hook->addAction('admin_menu', [$this, 'addMenu']);
@@ -44,7 +51,7 @@ class Settings implements Hookable
 			__('Howdy', 'plugin-name'),
 			'manage_options',
 			App::name(),
-			[$this, 'renderPage'],
+			[$this, 'render'],
 		);
 	}
 
@@ -57,7 +64,7 @@ class Settings implements Hookable
 	 *
 	 * @see ./src/settings/Page.jsx
 	 */
-	public function renderPage(): void
+	public function render(): void
 	{
 		// phpcs:disable Generic.Files.InlineHTML.Found
 		?>
@@ -122,12 +129,6 @@ class Settings implements Hookable
 	 */
 	public function getInlineScript(): string
 	{
-		$setting = App::settings('general');
-
-		if (! $setting instanceof Registry) {
-			return '';
-		}
-
 		$request = new WP_REST_Request('GET', '/wp/v2/settings');
 		$response = rest_do_request($request);
 
@@ -135,7 +136,7 @@ class Settings implements Hookable
 		 * Filter the response data to only include those registered in the plugin
 		 * settings.
 		 */
-		$keys = array_keys($setting->getRegistered());
+		$keys = array_keys($this->settings->get('general'));
 		$data = array_filter(
 			$response->get_data(),
 			static fn ($key): bool => in_array($key, $keys, true),

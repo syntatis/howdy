@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use PluginName\Vendor\Codex\Foundation\Settings\Setting;
-use PluginName\Vendor\Syntatis\Utils\Val;
+use PluginName\Vendor\Codex\Settings\Setting;
 
 /**
  * Defines the options to be used by the plugin. Aside the name and type,
@@ -12,10 +11,5 @@ use PluginName\Vendor\Syntatis\Utils\Val;
  */
 return [
 	(new Setting('greeting'))
-		->withDefault('Hello World!')
-		->withConstraints(
-			static fn (string $value) => Val::isBlank($value)
-				? __('This field cannot be empty.', 'plugin-name')
-				: true,
-		),
+		->withDefault('Hello World!'),
 ];

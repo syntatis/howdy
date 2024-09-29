@@ -1,5 +1,5 @@
 <?php
 
 return [
-	\PluginName\Vendor\Codex\Providers\SettingsProvider::class,
+	\PluginName\Vendor\Codex\Settings\Provider::class,
 ];

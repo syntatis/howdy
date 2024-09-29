@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PluginName;
 
 use PluginName\Vendor\Codex\Contracts\Extendable;
+use PluginName\Vendor\Codex\Settings\Settings;
 use PluginName\Vendor\Psr\Container\ContainerInterface;
 
 /**
@@ -23,6 +24,6 @@ class Plugin implements Extendable
 	 */
 	public function getInstances(ContainerInterface $container): iterable
 	{
-		yield new Settings();
+		yield new SettingPage($container->get(Settings::class));
 	}
 }
