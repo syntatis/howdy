@@ -46,7 +46,7 @@ Commands are available to help you with the development process. You can run the
 
 <table>
     <thead>
-        <th width="28%">Command</th>
+        <th width="40%">Command</th>
         <th>Description</th>
     </thead>
     <tbody>
