@@ -46,12 +46,12 @@ Commands are available to help you with the development process. You can run the
 
 <table>
     <thead>
-        <th width="40%">Command</th>
+        <th>Command</th>
         <th>Description</th>
     </thead>
     <tbody>
         <tr>
-            <td><code>composer codex:project init</code></td>
+            <td><code>composer&nbsp;codex:project&nbsp;init</code></td>
             <td>Initializes the project. It runs automatically after creating the project. But if if failed and you need to re-run it, you can do so with this command. It will prompt you with a few questions, such as to enter the plugin name, slug, and PHP namespaces.</td>
         </tr>
         <tr>
