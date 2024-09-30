@@ -44,6 +44,8 @@ npm run start
 
 Commands are available to help you with the development process. You can run these commands from the root of your plugin directory.
 
+### Composer
+
 <table>
     <thead>
         <th>Command</th>
@@ -60,6 +62,24 @@ Commands are available to help you with the development process. You can run the
         </tr>
 </table>
 
+### Node
+
+<table>
+	<thead>
+		<th>Command</th>
+		<th>Description</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>npm&nbsp;run&nbsp;start</code></td>
+			<td>Compiles the assets, like the stylesheets and the JavaScript files, and watches for the changes within the files to recompile them automatically.</td>
+		</tr>
+		<tr>
+			<td><code>npm&nbsp;run&nbsp;build</code></td>
+			<td>Builds the assets for production. It compiles the assets, like the stylesheets and the JavaScript files, and minifies them for production use.</td>
+		</tr>
+	</tbody>
+</table>
 
 ## References
 
