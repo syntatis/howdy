@@ -40,6 +40,27 @@ npm install
 npm run start
 ```
 
+## Commands
+
+Commands are available to help you with the development process. You can run these commands from the root of your plugin directory.
+
+<table>
+    <thead>
+        <th width="28%">Command</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>composer codex:project init</code></td>
+            <td>Initializes the project. It runs automatically after creating the project. But if if failed and you need to re-run it, you can do so with this command. It will prompt you with a few questions, such as to enter the plugin name, slug, and PHP namespaces.</td>
+        </tr>
+        <tr>
+            <td><code>composer scope</code></td>
+            <td>Scopes the plugin dependencies to prevent naming conflicts with other plugins. Typically you'd need to run it after installing a new dependencies or updating the existing ones.</td>
+        </tr>
+</table>
+
+
 ## References
 
 - [WordPress Plugin Handbook](https://developer.wordpress.org/plugins/) for plugin guidelines.
