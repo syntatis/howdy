@@ -32,7 +32,7 @@ return [
 		Finder::create()
 			->files()
 			->ignoreVCS(true)
-			->notName('/Makefile|CHANGELOG.*|.*\\.md|.*\\.dist|.*\\.json|.*\\.lock|.*\\.rst/')
+			->notName('/composer.json|composer.lock|Makefile|LICENSE|CHANGELOG.*|.*\\.md|.*\\.dist|.*\\.rst/')
 			->notPath(['bamarni', 'bin'])
 			->exclude([
 				'doc',
