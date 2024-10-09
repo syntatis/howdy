@@ -9,7 +9,7 @@ declare(strict_types=1);
  *
  * @wordpress-plugin
  * Plugin Name:       Plugin Name
- * Plugin URI:        https://example.org/plugin/plugin-name
+ * Plugin URI:        https://example.org
  * Description:       The plugin short description.
  * Version:           1.0.0
  * Requires at least: 5.8

@@ -21,8 +21,6 @@ composer create-project syntatis/howdy -s dev
 
 This command will set up the boilerplate files in a directory named `howdy`. It will ask you a few questions to customize your project, like the plugin slug, name, and the PHP namespaces.
 
-![Composer create-project command run in Terminal](/art/composer-create-project-terminal.png)
-
 Once you've input all these details, it will scope the plugin dependency libraries to prevent naming conflicts with other plugins which may also be using the same libraries. You can find the scoped dependencies in the `dist-autoload` directory.
 
 > [!TIP]  

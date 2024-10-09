@@ -12,18 +12,16 @@ Thumbs.db
 ###################
 *.tar.gz
 *.zip
-dist
-dist-*
+dist*
 @*
 
-# Dependency #
+# Dependencies #
 ##########################
-node_modules/
-vendor/
-vendor-*
+node_modules
+vendor*
 composer.lock
 package-lock.*
 
-# Temporary #
+# Temporary files #
 #############
-tmp/
+tmp

@@ -9,9 +9,10 @@ use function trim;
 /**
  * Retrieve the path to a file or directory within the plugin.
  *
- * @param string $path The path to a file or directory within the plugin, added with leading slash e.g. `/dist`.
+ * @param string $path The absolute path to a file or directory within the
+ *                     plugin, added with leading slash e.g. `/dist`.
  *
- * @return string The full path to the file or directory, withtout the trailingslash
+ * @return string The absolute directory path to the file or directory, withtout the trailingslash
  *                e.g. `/wp-content/plugins/plugin-name/dist`.
  */
 function plugin_dir_path(string $path = ''): string
@@ -28,10 +29,11 @@ function plugin_dir_path(string $path = ''): string
 /**
  * Retrieve the URL to a file or directory within the plugin.
  *
- * @param string $path The path to a file or directory within the plugin, added with leading slash e.g. `/dist`.
+ * @param string $path The path to a file or directory within the plugin,
+ *                     added with leading slash e.g. `/dist`.
  *
- * @return string The full URL to the file or directory, withtout the trailingslash
- *                e.g. `https://example.com/wp-content/plugins/plugin-name/dist`.
+ * @return string The absolute URL of the provided path, returned without
+ *                the trailingslash e.g. `https://example.com/wp-content/plugins/plugin-name/dist`.
  */
 function plugin_dir_url(string $path = ''): string
 {

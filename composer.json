@@ -1,81 +1,76 @@
 {
-	"name": "syntatis/howdy",
-	"description": "Your next modern WordPress plugin project",
-	"type": "wordpress-plugin",
-	"keywords": [
-		"wordpress",
-		"plugin",
-		"boilerplate"
-	],
-	"authors": [
-		{
-			"name": "Thoriq Firdaus",
-			"homepage": "https://github.com/tfirdaus"
-		}
-	],
-	"license": "GPL-2.0-or-later",
-	"autoload": {
-		"files": [
-			"inc/helpers.php"
-		],
-		"psr-4": {
-			"PluginName\\": "app/"
-		}
-	},
-	"require": {
-		"php": ">=7.4",
-		"syntatis/codex": "dev-main",
-		"syntatis/codex-settings-provider": "dev-main"
-	},
-	"require-dev": {
-		"bamarni/composer-bin-plugin": "^1.8",
-		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-		"phpcompatibility/phpcompatibility-wp": "^2.1",
-		"syntatis/codex-companion": "dev-main",
-		"syntatis/coding-standard": "^1.4"
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true,
-	"scripts": {
-		"phpcs:fix": "phpcbf",
-		"phpcs": "phpcs",
-		"post-create-project-cmd": [
-			"@composer codex:project init",
-			"@composer u --lock",
-			"@composer scope"
-		],
-		"scope": [
-			"@composer bin php-scoper require -W humbug/php-scoper",
-			"@composer i --no-dev --no-scripts",
-			"php-scoper add-prefix --output-dir=dist-autoload --force --quiet",
-			"@composer dump -d dist-autoload",
-			"@composer i --no-scripts"
-		]
-	},
-	"scripts-descriptions": {
-		"scope": "Scope the autoloader to prevent conflicts with other plugins",
-		"phpcs": "Check the codebase for coding standards violations",
-		"phpcs:fix": "Fix coding standards violations"
-	},
-	"config": {
-		"allow-plugins": {
-			"bamarni/composer-bin-plugin": true,
-			"dealerdirect/phpcodesniffer-composer-installer": true,
-			"syntatis/codex-companion": true
-		},
-		"optimize-autoloader": true,
-		"preferred-install": "dist",
-		"sort-packages": true
-	},
-	"extra": {
-		"bamarni-bin": {
-			"bin-links": true,
-			"forward-command": true
-		},
-		"codex": {
-			"project": {
-				"name": "howdy"
-			}
-		}
-	}
+    "name": "syntatis/howdy",
+    "description": "Your next modern WordPress plugin project",
+    "type": "wordpress-plugin",
+    "keywords": [
+        "wordpress",
+        "plugin",
+        "boilerplate"
+    ],
+    "authors": [
+        {
+            "name": "Thoriq Firdaus",
+            "homepage": "https://github.com/tfirdaus"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "files": [
+            "inc/helpers.php"
+        ],
+        "psr-4": {
+            "PluginName\\": [
+                "app/"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "syntatis/codex": "dev-main",
+        "syntatis/codex-settings-provider": "dev-main"
+    },
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.8",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "symfony/var-dumper": "^5.4",
+        "syntatis/codex-companion": "dev-main",
+        "syntatis/coding-standard": "^1.4"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "phpcs:fix": "phpcbf",
+        "phpcs": "phpcs",
+        "scoper:init": "codex scoper:init"
+    },
+    "scripts-descriptions": {
+        "phpcs": "Check the codebase for coding standards violations",
+        "phpcs:fix": "Fix coding standards violations",
+        "scoper:init": "Scope dependencies namespace with a prefix"
+    },
+    "config": {
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "syntatis/codex-companion": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "bamarni-bin": {
+            "bin-links": true,
+            "forward-command": true
+        },
+        "codex": {
+            "scoper": {
+                "prefix": "PluginName\\Vendor",
+                "install-dev": [
+                    "symfony/var-dumper"
+                ]
+            }
+        }
+    }
 }

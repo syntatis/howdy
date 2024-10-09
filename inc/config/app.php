@@ -10,9 +10,9 @@ return [
 	 * The plugin name.
 	 *
 	 * The plugin name config is required and has to be unique, since it will
-	 * be used as an identifier for the plugin in various occassions,
-	 * such as when enqueueing scripts and styles, registering
-	 * settings, and more.
+	 * be used as an identifier for the plugin in various occassions, such
+	 * as when enqueueing scripts and styles, registering settings, and
+	 * more.
 	 */
 	'name' => 'plugin-name',
 
