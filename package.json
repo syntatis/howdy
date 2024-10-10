@@ -39,11 +39,8 @@
         "build": "wp-scripts build --output-path=dist/assets",
         "lint:js": "wp-scripts lint-js ./src",
         "lint:css": "wp-scripts lint-style ./src",
-        "lint:md-docs": "wp-scripts lint-md-docs",
-        "lint:pkg-json": "wp-scripts lint-pkg-json",
         "format": "wp-scripts format",
         "packages-update": "wp-scripts packages-update",
-        "plugin-zip": "wp-scripts plugin-zip",
-        "check-licenses": "wp-scripts check-licenses"
+        "plugin-zip": "wp-scripts plugin-zip"
     }
 }
