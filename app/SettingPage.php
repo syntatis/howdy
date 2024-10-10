@@ -18,12 +18,13 @@ use function sprintf;
 use const ARRAY_FILTER_USE_KEY;
 
 /**
- * The SettingPage class.
+ * The `SettingPage` class.
  *
- * This class serves as an example on how to manage the plugins settings.
- * It shows how to register the options, enqueuing the scripts and
- * the styles, and rendering the settings page. Feel free to
- * remove the class or modify it to suit your needs.
+ * Serves as an example on how to manage the plugin setting. It shows how
+ * to add a submenu on WordPress admin, enqueue the scripts and styles,
+ * and rendering the setting page.
+ *
+ * Feel free to remove this or modify it to suit your needs.
  */
 class SettingPage implements Hookable
 {
@@ -59,10 +60,10 @@ class SettingPage implements Hookable
 	 * Render the plugin settings page.
 	 *
 	 * Called when user navigates to the plugin settings page. It will render
-	 * only with these HTML. The settings form, inputs, buttons will be
+	 * only with these HTML. The setting form, inputs, buttons will all be
 	 * rendered with React components.
 	 *
-	 * @see ./src/settings/Page.jsx
+	 * @see ./src/setting-page/Page.jsx
 	 */
 	public function render(): void
 	{

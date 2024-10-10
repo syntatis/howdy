@@ -9,10 +9,10 @@ use PluginName\Vendor\Codex\Settings\Settings;
 use PluginName\Vendor\Psr\Container\ContainerInterface;
 
 /**
- * The Plugin class.
+ * The `Plugin` class.
  *
  * Serves as the main entry point for plugin, handling the initialization
- * of core functionalities manages activation, deactivation, and update
+ * of core functionalities manages activation, deactivation and update
  * processes.
  */
 class Plugin implements Extendable
