@@ -21,7 +21,7 @@ use PluginName\Vendor\Codex\Plugin as App;
  * @see https://getcomposer.org/doc/01-basic-usage.md#autoloading
  * @see https://deliciousbrains.com/php-scoper-namespace-composer-dependencies/
  */
-require PLUGIN_DIR . '/dist-autoload/vendor/scoper-autoload.php';
+require PLUGIN_DIR . '/dist/autoload/vendor/scoper-autoload.php';
 
 /**
  * Initialize the plugin application.

@@ -66,10 +66,10 @@
         },
         "codex": {
             "scoper": {
-                "prefix": "PluginName\\Vendor",
                 "install-dev": [
                     "symfony/var-dumper"
-                ]
+                ],
+                "prefix": "PluginName\\Vendor"
             }
         }
     }

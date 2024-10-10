@@ -30,7 +30,7 @@ return [
 	 * The value defines the path to the directory where the assets, scripts,
 	 * and styles are compiled.
 	 */
-	'assets_path' => plugin_dir_path('/dist'),
+	'assets_path' => plugin_dir_path('/dist/assets'),
 
 	/**
 	 * The plugin assets base URL.
@@ -66,5 +66,5 @@ return [
 	 *
 	 * @see https://developer.wordpress.org/block-editor/getting-started/fundamentals/
 	 */
-	'blocks_path' => plugin_dir_path('/dist/blocks'),
+	'blocks_path' => plugin_dir_path('/dist/assets'),
 ];

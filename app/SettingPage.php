@@ -98,18 +98,18 @@ class SettingPage implements Hookable
 		}
 
 		$scriptHandle = App::name() . '-settings';
-		$scriptAsset = include plugin_dir_path('/dist/settings/index.asset.php');
+		$scriptAsset = include plugin_dir_path('/dist/assets/setting-page/index.asset.php');
 
 		wp_enqueue_style(
 			$scriptHandle,
-			plugin_dir_url('/dist/settings/index.css'),
+			plugin_dir_url('/dist/assets/setting-page/index.css'),
 			[],
 			$scriptVersion ?? null,
 		);
 
 		wp_enqueue_script(
 			$scriptHandle,
-			plugin_dir_url('/dist/settings/index.js'),
+			plugin_dir_url('/dist/assets/setting-page/index.js'),
 			$scriptAsset['dependencies'] ?? [],
 			$scriptVersion ?? null,
 			true,

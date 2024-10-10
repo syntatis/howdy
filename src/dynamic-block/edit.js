@@ -5,7 +5,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps } from '@wordpress/block-editor';
-import { useSettings } from '../../settings/useSettings';
+import { useSettings } from '../setting-page/useSettings';
 
 export default function Edit() {
 	const { getOption } = useSettings();

@@ -38,6 +38,6 @@ module.exports = {
 	...defaultConfig,
 	entry: {
 		...defaultConfig.entry(),
-		...fileEntries( glob.sync( './src/**/*' ) ),
+		...fileEntries( glob.sync( './src/*' ) ),
 	},
 };
