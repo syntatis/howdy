@@ -26,7 +26,7 @@ require PLUGIN_DIR . '/dist/autoload/vendor/scoper-autoload.php';
 /**
  * Initialize the plugin application.
  */
-$app = new App(new Plugin());
-$app->setPluginFilePath(PLUGIN_FILE);
-$app->addServices(include plugin_dir_path('/inc/bootstrap/providers.php'));
-$app->boot();
+(new App(new Plugin()))
+	->setPluginFilePath(PLUGIN_FILE)
+	->addServices(include plugin_dir_path('/inc/bootstrap/providers.php'))
+	->boot();
