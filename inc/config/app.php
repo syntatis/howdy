@@ -22,14 +22,6 @@ return [
 	'text_domain' => 'plugin-name',
 
 	/**
-	 * The handle prefix for the plugin's assets.
-	 *
-	 * The prefix is used to register and enqueue the plugin's assets. It has
-	 * to be unique to the plugin to avoid conflicts with other plugins.
-	 */
-	'assets_handle_prefix' => 'plugin-name-',
-
-	/**
 	 * The option name prefix.
 	 *
 	 * Prefixing the option name helps to avoid conflicts with other plugins,
