@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PluginName;
 
-use PluginName\Vendor\Codex\Plugin as App;
+use PluginName\Vendor\Codex;
 
 /**
  * Load dependencies using the Composer autoloader.
@@ -17,16 +17,16 @@ use PluginName\Vendor\Codex\Plugin as App;
  * plugins or themes that might use the same libraries with the same
  * namespaces or class names.
  *
- * @see https://github.com/humbug/php-scoper
  * @see https://getcomposer.org/doc/01-basic-usage.md#autoloading
  * @see https://deliciousbrains.com/php-scoper-namespace-composer-dependencies/
+ * @see https://github.com/humbug/php-scoper
  */
 require PLUGIN_DIR . '/dist/autoload/vendor/scoper-autoload.php';
 
 /**
  * Initialize the plugin application.
  */
-(new App(new Plugin()))
+(new Codex\Plugin(new Plugin()))
 	->setPluginFilePath(PLUGIN_FILE)
-	->addServices(include wp_normalize_path(PLUGIN_DIR . '/inc/bootstrap/providers.php'))
+	->addServices(include PLUGIN_DIR . '/inc/bootstrap/providers.php')
 	->boot();
