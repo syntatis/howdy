@@ -39,5 +39,5 @@ return [
 	 *
 	 * @see https://developer.wordpress.org/block-editor/getting-started/fundamentals/
 	 */
-	'blocks_path' => '/dist/assets',
+	'blocks_path' => 'dist/assets',
 ];
