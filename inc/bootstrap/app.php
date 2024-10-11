@@ -28,5 +28,5 @@ require PLUGIN_DIR . '/dist/autoload/vendor/scoper-autoload.php';
  */
 (new App(new Plugin()))
 	->setPluginFilePath(PLUGIN_FILE)
-	->addServices(include plugin_dir_path('/inc/bootstrap/providers.php'))
+	->addServices(include wp_normalize_path(PLUGIN_DIR . '/inc/bootstrap/providers.php'))
 	->boot();

@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-use function PluginName\plugin_dir_path;
-use function PluginName\plugin_dir_url;
-
 return [
 	/**
 	 * The plugin name.
@@ -23,22 +20,6 @@ return [
 	 * to match with the text domain used in the plugin header.
 	 */
 	'text_domain' => 'plugin-name',
-
-	/**
-	 * The plugin assets directory.
-	 *
-	 * The value defines the path to the directory where the assets, scripts,
-	 * and styles are compiled.
-	 */
-	'assets_path' => plugin_dir_path('/dist/assets'),
-
-	/**
-	 * The plugin assets base URL.
-	 *
-	 * Typically, this is also the URL to the assets directory, but it can be
-	 * a CDN URL or any other URL where the assets are hosted.
-	 */
-	'assets_url' => plugin_dir_url('/dist'),
 
 	/**
 	 * The handle prefix for the plugin's assets.
@@ -66,5 +47,5 @@ return [
 	 *
 	 * @see https://developer.wordpress.org/block-editor/getting-started/fundamentals/
 	 */
-	'blocks_path' => plugin_dir_path('/dist/assets'),
+	'blocks_path' => '/dist/assets',
 ];

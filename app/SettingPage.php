@@ -98,31 +98,31 @@ class SettingPage implements Hookable
 			return;
 		}
 
-		$scriptHandle = App::name() . '-settings';
-		$scriptAsset = include plugin_dir_path('/dist/assets/setting-page/index.asset.php');
+		$handle = App::name() . '-settings';
+		$asset = include App::dir('dist/assets/setting-page/index.asset.php');
 
 		wp_enqueue_style(
-			$scriptHandle,
-			plugin_dir_url('/dist/assets/setting-page/index.css'),
+			$handle,
+			App::url('dist/assets/setting-page/index.css'),
 			[],
 			$scriptVersion ?? null,
 		);
 
 		wp_enqueue_script(
-			$scriptHandle,
-			plugin_dir_url('/dist/assets/setting-page/index.js'),
-			$scriptAsset['dependencies'] ?? [],
+			$handle,
+			App::url('dist/assets/setting-page/index.js'),
+			$asset['dependencies'] ?? [],
 			$scriptVersion ?? null,
 			true,
 		);
 
 		wp_add_inline_script(
-			$scriptHandle,
+			$handle,
 			$this->getInlineScript(),
 			'before',
 		);
 
-		wp_set_script_translations($scriptHandle, 'plugin-name');
+		wp_set_script_translations($handle, 'plugin-name');
 	}
 
 	/**
