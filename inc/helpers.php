@@ -2,47 +2,18 @@
 
 declare(strict_types=1);
 
+/**
+ * The helper functions.
+ *
+ * You can add the helper functions to use in the plugin within this file.
+ * This file will be autoloaded by the Composer autoloader, and it will
+ * be available globally in the plugin.
+ *
+ * The helper function name does not need to be prefixed. As they will be
+ * added within namespace of the plugin, it will prevent conflict with
+ * functions defined in other plugins or themes.
+ *
+ * @see https://getcomposer.org/doc/04-schema.md#files
+ */
+
 namespace PluginName;
-
-use function trim;
-
-/**
- * Retrieve the path to a file or directory within the plugin.
- *
- * @param string $path The absolute path to a file or directory within the
- *                     plugin, added with leading slash e.g. `/dist`.
- *
- * @return string The absolute directory path to the file or directory, withtout the trailingslash
- *                e.g. `/wp-content/plugins/plugin-name/dist`.
- */
-function plugin_dir_path(string $path = ''): string
-{
-	$path = trim($path);
-
-	if ($path === '') {
-		return PLUGIN_DIR;
-	}
-
-	return untrailingslashit(wp_normalize_path(PLUGIN_DIR . $path));
-}
-
-/**
- * Retrieve the URL to a file or directory within the plugin.
- *
- * @param string $path The path to a file or directory within the plugin,
- *                     added with leading slash e.g. `/dist`.
- *
- * @return string The absolute URL of the provided path, returned without
- *                the trailingslash e.g. `https://example.com/wp-content/plugins/plugin-name/dist`.
- */
-function plugin_dir_url(string $path = ''): string
-{
-	$dirUrl = plugins_url('', PLUGIN_FILE);
-	$path = trim($path);
-
-	if ($path !== '') {
-		$dirUrl .= $path;
-	}
-
-	return untrailingslashit($dirUrl);
-}

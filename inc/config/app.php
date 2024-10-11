@@ -1,10 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-use function PluginName\plugin_dir_path;
-use function PluginName\plugin_dir_url;
-
 return [
 	/**
 	 * The plugin name.
@@ -25,30 +20,6 @@ return [
 	'text_domain' => 'plugin-name',
 
 	/**
-	 * The plugin assets directory.
-	 *
-	 * The value defines the path to the directory where the assets, scripts,
-	 * and styles are compiled.
-	 */
-	'assets_path' => plugin_dir_path('/dist/assets'),
-
-	/**
-	 * The plugin assets base URL.
-	 *
-	 * Typically, this is also the URL to the assets directory, but it can be
-	 * a CDN URL or any other URL where the assets are hosted.
-	 */
-	'assets_url' => plugin_dir_url('/dist'),
-
-	/**
-	 * The handle prefix for the plugin's assets.
-	 *
-	 * The prefix is used to register and enqueue the plugin's assets. It has
-	 * to be unique to the plugin to avoid conflicts with other plugins.
-	 */
-	'assets_handle_prefix' => 'plugin-name-',
-
-	/**
 	 * The option name prefix.
 	 *
 	 * Prefixing the option name helps to avoid conflicts with other plugins,
@@ -64,7 +35,9 @@ return [
 	 * a `block.json` file that defines the block's metadata, and their
 	 * respective CSS, and JavaScript files already compiled.
 	 *
+	 * The value should be a relative path to the plugin's root directory.
+	 *
 	 * @see https://developer.wordpress.org/block-editor/getting-started/fundamentals/
 	 */
-	'blocks_path' => plugin_dir_path('/dist/assets'),
+	'blocks_path' => 'dist/assets',
 ];
