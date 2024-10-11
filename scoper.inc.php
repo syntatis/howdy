@@ -6,5 +6,7 @@ use Syntatis\Codex\Companion\Clients\PHPScoperInc;
 
 require __DIR__ . '/vendor/autoload.php';
 
-return (new PHPScoperInc(__DIR__))
-	->getAll();
+/**
+ * Generate the PHP-Scoper configuration.
+ */
+return (new PHPScoperInc(__DIR__))->get();
