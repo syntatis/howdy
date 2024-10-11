@@ -35,6 +35,8 @@ return [
 	 * a `block.json` file that defines the block's metadata, and their
 	 * respective CSS, and JavaScript files already compiled.
 	 *
+	 * The value should be a relative path to the plugin's root directory.
+	 *
 	 * @see https://developer.wordpress.org/block-editor/getting-started/fundamentals/
 	 */
 	'blocks_path' => 'dist/assets',
