@@ -20,6 +20,16 @@ class Plugin implements Extendable
 	/**
 	 * Provide the plugin's feature to instantiate.
 	 *
+	 * The `ContainerInstance` passed in this method is the service container
+	 * that manages the "services" registered in the plugin. A service may
+	 * be any value, like a string, a number, an object, or a "factory"
+	 * that you can retrieve and pass on the classes or functions in
+	 * the plugin that depends on the "service".
+	 *
+	 * @see https://www.php-fig.org/psr/psr-11/ For specification of the ContainerInterface.
+	 *
+	 * @param ContainerInstance $container The container instance.
+	 *
 	 * @return iterable<object>
 	 */
 	public function getInstances(ContainerInterface $container): iterable
