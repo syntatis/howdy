@@ -26,9 +26,9 @@ class Plugin implements Extendable
 	 * that you can retrieve and pass on the classes or functions in
 	 * the plugin that depends on the "service".
 	 *
-	 * @see https://www.php-fig.org/psr/psr-11/ For specification of the ContainerInterface.
+	 * @see https://www.php-fig.org/psr/psr-11/ For `ContainerInterface` specification.
 	 *
-	 * @param ContainerInstance $container The container instance.
+	 * @param ContainerInstance $container PSR-11 compatible service container.
 	 *
 	 * @return iterable<object>
 	 */
