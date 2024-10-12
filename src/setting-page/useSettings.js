@@ -1,8 +1,8 @@
 /**
  * This hook serves as an example to use WordPress REST API to connect to
- * the settings, handle the response, parse the error message and
- * update the state. Feel free to modify adjust or even remove
- * it as needed.
+ * retrieve settings, handle the response, parse the error message and
+ * update the state. Feel free to modify or remove it, if it doesn't
+ * fit your needs.
  */
 
 import apiFetch from '@wordpress/api-fetch';
