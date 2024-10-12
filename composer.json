@@ -55,7 +55,6 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "syntatis/codex-companion": true
         },
-        "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
     },
