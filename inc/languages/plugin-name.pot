@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-05T17:27:47+00:00\n"
+"POT-Creation-Date: 2024-10-13T16:50:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: plugin-name\n"
@@ -35,52 +35,52 @@ msgstr ""
 msgid "Author Name"
 msgstr ""
 
-#: app/SettingPage.php:50
+#: app/SettingPage.php:52
 msgid "Howdy Settings"
 msgstr ""
 
-#: app/SettingPage.php:51
+#: app/SettingPage.php:53
 msgid "Howdy"
 msgstr ""
 
-#: app/SettingPage.php:76
+#: app/SettingPage.php:78
 msgid "This setting page requires JavaScript to be enabled in your browser. Please enable JavaScript and reload the page."
 msgstr ""
 
-#: src/blocks/static/edit.js:37
-msgid "Hello from the editor!"
-msgstr ""
-
-#: src/settings/Page.jsx:31
+#: src/setting-page/Page.jsx:39
 msgid "Settings saved."
 msgstr ""
 
-#: src/settings/Page.jsx:32
+#: src/setting-page/Page.jsx:40
 msgid "Settings save failed."
 msgstr ""
 
-#: src/settings/Page.jsx:53
+#: src/setting-page/Page.jsx:61
 msgid "Greeting"
 msgstr ""
 
-#: src/settings/Page.jsx:72
+#: src/setting-page/Page.jsx:80
 msgid "Enter a greeting to display."
 msgstr ""
 
-#: src/settings/Page.jsx:89
+#: src/setting-page/Page.jsx:97
 msgid "Saving Changes"
 msgstr ""
 
-#: src/settings/Page.jsx:90
+#: src/setting-page/Page.jsx:98
 msgid "Save Changes"
 msgstr ""
 
-#: src/blocks/dynamic/block.json
+#: src/static-block/edit.js:37
+msgid "Hello from the editor!"
+msgstr ""
+
+#: src/dynamic-block/block.json
 msgctxt "block title"
 msgid "Dynamic Block"
 msgstr ""
 
-#: src/blocks/dynamic/block.json
+#: src/dynamic-block/block.json
 msgctxt "block keyword"
 msgid "dynamic"
 msgstr ""
