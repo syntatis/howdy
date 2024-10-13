@@ -1,8 +1,9 @@
 /**
  * This file serves as an example, on how to create a setting page in the
  * WordPress admin area using a React component and Kubrick components
- * for the UI. Feel free to modify or remove it, if it does not fit
- * your needs.
+ * for the UI.
+ *
+ * Feel free to modify or remove it, if it doesn't fit your needs.
  */
 
 import { Button, Notice, Spinner, TextField } from '@syntatis/kubrick';
