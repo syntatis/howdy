@@ -13,6 +13,7 @@ use WP_REST_Request;
 use function array_filter;
 use function array_keys;
 use function in_array;
+use function is_readable;
 use function sprintf;
 
 use const ARRAY_FILTER_USE_KEY;
@@ -99,7 +100,8 @@ class SettingPage implements Hookable
 		}
 
 		$handle = App::name() . '-settings';
-		$asset = include App::dir('dist/assets/setting-page/index.asset.php');
+		$assets = App::dir('dist/assets/setting-page/index.asset.php');
+		$assets = is_readable($assets) ? require $assets : [];
 
 		wp_enqueue_style(
 			$handle,
