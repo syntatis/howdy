@@ -32,11 +32,12 @@
         "@wordpress/i18n": "^5.9.0"
     },
     "devDependencies": {
-        "@wordpress/scripts": "^30.1.0"
+        "@wordpress/scripts": "^30.1.0",
+        "cross-env": "^7.0.3"
     },
     "scripts": {
         "start": "wp-scripts start --output-path=dist/assets",
-        "build": "wp-scripts build --output-path=dist/assets",
+        "build": "cross-env NODE_ENV=production wp-scripts build --output-path=dist/assets",
         "lint:js": "wp-scripts lint-js ./src",
         "lint:css": "wp-scripts lint-style ./src",
         "format": "wp-scripts format",
