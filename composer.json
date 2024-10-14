@@ -49,7 +49,7 @@
         "phpcs": "Check the codebase for coding standards violations",
         "phpcs:fix": "Fix coding standards violations",
         "scoper": "Scope dependencies namespace with a prefix",
-        "scoper:prod": "Scope dependencies namespace with a prefix for production"
+        "scoper:prod": "Scope dependencies namespace, and exclude the development dependencies"
     },
     "config": {
         "allow-plugins": {
