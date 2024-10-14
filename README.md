@@ -49,9 +49,13 @@ Commands are available to help you with the development process. You can run the
     </thead>
     <tbody>
         <tr>
-            <td><code>composer&nbsp;scoper:init</code></td>
-            <td>Scopes the plugin dependencies to prevent naming conflicts with other plugins. Typically you'd need to run it after installing a new dependencies or updating the existing ones.</td>
+            <td><code>composer&nbsp;scoper</code></td>
+            <td>Scopes the plugin Composer dependencies to prevent naming conflicts with other plugins. Typically you'd need to run it after installing a new dependencies or updating the existing ones.</td>
         </tr>
+		<tr>
+			<td><code>composer&nbsp;scoper:prod</code></td>
+            <td>Scopes the plugin dependencies for production. It prefixes the Composer dependencies without the development dependencies.</td>
+		</tr>
 		<tr>
 			<td><code>npm&nbsp;run&nbsp;start</code></td>
 			<td>Compiles the assets, like the stylesheets and the JavaScript files, and watches for the changes within the files to recompile them automatically.</td>
