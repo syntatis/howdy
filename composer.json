@@ -42,7 +42,8 @@
     "scripts": {
         "phpcs:fix": "phpcbf",
         "phpcs": "phpcs",
-        "scoper:init": "codex scoper:init"
+        "scoper": "codex scoper:init",
+        "scoper:prod": "codex scoper:init --no-dev"
     },
     "scripts-descriptions": {
         "phpcs": "Check the codebase for coding standards violations",
