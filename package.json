@@ -22,7 +22,8 @@
         "inc",
         "dist",
         "*.php",
-        "!**/*.*.php"
+        "!*.inc.php",
+        "!*.map"
     ],
     "dependencies": {
         "@syntatis/kubrick": "^0.1.0-beta.3",
