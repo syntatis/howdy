@@ -48,7 +48,8 @@
     "scripts-descriptions": {
         "phpcs": "Check the codebase for coding standards violations",
         "phpcs:fix": "Fix coding standards violations",
-        "scoper:init": "Scope dependencies namespace with a prefix"
+        "scoper": "Scope dependencies namespace with a prefix",
+        "scoper:prod": "Scope dependencies namespace with a prefix for production"
     },
     "config": {
         "allow-plugins": {
