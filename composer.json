@@ -35,12 +35,14 @@
         "phpcompatibility/phpcompatibility-wp": "^2.1",
         "symfony/var-dumper": "^5.4",
         "syntatis/codex-companion": "dev-main",
-        "syntatis/coding-standard": "^1.4"
+        "syntatis/coding-standard": "^1.4",
+        "wp-cli/i18n-command": "^2.6"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "build": [
+            "wp i18n make-pot --exclude=vendor,dist . inc/languages/plugin-name.pot",
             "codex scoper:init --yes --no-dev"
         ],
         "phpcs": "phpcs",
