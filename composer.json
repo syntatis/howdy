@@ -40,16 +40,18 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "phpcs:fix": "phpcbf",
+        "build": [
+            "codex scoper:init --yes --no-dev"
+        ],
         "phpcs": "phpcs",
-        "scoper": "codex scoper:init",
-        "scoper:prod": "codex scoper:init --no-dev"
+        "phpcs:fix": "phpcbf",
+        "scoper": "codex scoper:init"
     },
     "scripts-descriptions": {
+        "build": "Build the plugin for production",
         "phpcs": "Check the codebase for coding standards violations",
         "phpcs:fix": "Fix coding standards violations",
-        "scoper": "Scope dependencies namespace with a prefix",
-        "scoper:prod": "Scope dependencies namespace, and exclude the development dependencies"
+        "scoper": "Scope dependencies namespace with a prefix"
     },
     "config": {
         "allow-plugins": {
