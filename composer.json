@@ -19,9 +19,7 @@
             "inc/helpers.php"
         ],
         "psr-4": {
-            "PluginName\\": [
-                "app/"
-            ]
+            "PluginName\\": "app/"
         }
     },
     "require": {
