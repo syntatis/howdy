@@ -11,7 +11,7 @@ declare(strict_types=1);
  * Plugin Name:       Plugin Name
  * Plugin URI:        https://example.org
  * Description:       The plugin short description.
- * Version:           1.0.0
+ * Version:           0.1.0
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Author Name
@@ -38,7 +38,7 @@ if (! defined('WPINC')) {
  * It provides a clear understanding of the impact of changes between
  * versions.
  */
-const PLUGIN_VERSION = '1.0.0';
+const PLUGIN_VERSION = '0.1.0';
 
 /**
  * Define the directory path to the plugin file.
