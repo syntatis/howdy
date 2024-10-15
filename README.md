@@ -54,7 +54,7 @@ Commands are available to help you with the development process. You can run the
         </tr>
 		<tr>
 			<td><code>composer&nbsp;build</code></td>
-            <td>Run the plugin build process for production.</td>
+            <td>Run the plugin build process for production i.e. updating the translation POT file, and prefixing namespace.</td>
 		</tr>
 		<tr>
 			<td><code>npm&nbsp;run&nbsp;start</code></td>
