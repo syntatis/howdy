@@ -10,7 +10,7 @@ Thumbs.db
 
 # Compiled source #
 ###################
-*.tar.gz
+*.tar*
 *.zip
 dist*
 build*
