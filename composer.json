@@ -39,6 +39,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "archive:zip": "@composer archive --format=zip --file=plugin-name",
         "build": [
             "wp i18n make-pot --exclude=vendor,dist . inc/languages/plugin-name.pot",
             "codex scoper:init --yes --no-dev"
@@ -61,6 +62,28 @@
         },
         "preferred-install": "dist",
         "sort-packages": true
+    },
+    "archive": {
+        "exclude": [
+            "*.config.*",
+            "*.dev.php",
+            "*.inc.php",
+            "*.lock",
+            "*.map",
+            "*.md",
+            "*.xml*",
+            ".*",
+            "LICENSE",
+            "composer.json",
+            "node_modules",
+            "package-lock.json",
+            "package.json",
+            "src",
+            "vendor",
+            "vendor-bin",
+            "!dist/autoload/composer.json",
+            "!dist/autoload/vendor"
+        ]
     },
     "extra": {
         "bamarni-bin": {
