@@ -17,14 +17,6 @@
         "node": ">=18",
         "npm": ">=9"
     },
-    "files": [
-        "app",
-        "inc",
-        "dist",
-        "*.php",
-        "!*.inc.php",
-        "!*.map"
-    ],
     "dependencies": {
         "@syntatis/kubrick": "^0.1.0-beta.3",
         "@wordpress/api-fetch": "^7.9.0",
@@ -41,8 +33,6 @@
         "build": "cross-env NODE_ENV=production wp-scripts build --output-path=dist/assets",
         "lint:js": "wp-scripts lint-js ./src",
         "lint:css": "wp-scripts lint-style ./src",
-        "format": "wp-scripts format",
-        "packages-update": "wp-scripts packages-update",
-        "plugin-zip": "wp-scripts plugin-zip"
+        "format": "wp-scripts format"
     }
 }
