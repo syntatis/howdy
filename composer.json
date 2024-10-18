@@ -49,6 +49,7 @@
         "scoper": "codex scoper:init"
     },
     "scripts-descriptions": {
+        "archive:zip": "Create a zip archive of the plugin",
         "build": "Build the plugin for production",
         "phpcs": "Check the codebase for coding standards violations",
         "phpcs:fix": "Fix coding standards violations",
