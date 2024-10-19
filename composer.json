@@ -22,6 +22,11 @@
             "PluginName\\": "app/"
         }
     },
+    "autoload-dev": {
+        "files": [
+            "inc/bootstrap/app.dev.php"
+        ]
+    },
     "require": {
         "php": ">=7.4",
         "syntatis/codex": "dev-main",
