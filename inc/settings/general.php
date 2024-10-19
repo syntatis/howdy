@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 use PluginName\Vendor\Codex\Settings\Setting;
 
+// If this file is called directly, abort.
+if (! defined('ABSPATH')) {
+	exit;
+}
+
 /**
  * Defines the plugin options through WordPress Settings API.
  *
