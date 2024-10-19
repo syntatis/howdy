@@ -24,7 +24,7 @@
     },
     "autoload-dev": {
         "files": [
-            "inc/bootstrap/app.dev.php"
+            "inc/bootstrap/dev.php"
         ]
     },
     "require": {
@@ -72,7 +72,6 @@
     "archive": {
         "exclude": [
             "*.config.*",
-            "*.dev.php",
             "*.inc.php",
             "*.lock",
             "*.map",
@@ -81,6 +80,7 @@
             ".*",
             "LICENSE",
             "composer.json",
+            "dev.php",
             "node_modules",
             "package-lock.json",
             "package.json",
