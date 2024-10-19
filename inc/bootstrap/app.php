@@ -6,6 +6,11 @@ namespace PluginName;
 
 use PluginName\Vendor\Codex;
 
+// If this file is called directly, abort.
+if (! defined('ABSPATH')) {
+	exit;
+}
+
 /**
  * Load dependencies using the Composer autoloader.
  *
