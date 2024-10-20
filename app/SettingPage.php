@@ -102,19 +102,21 @@ class SettingPage implements Hookable
 		$handle = App::name() . '-settings';
 		$assets = App::dir('dist/assets/setting-page/index.asset.php');
 		$assets = is_readable($assets) ? require $assets : [];
+		$version = $assets['version'] ?? null;
+		$dependencies = $assets['dependencies'] ?? [];
 
 		wp_enqueue_style(
 			$handle,
 			App::url('dist/assets/setting-page/index.css'),
 			[],
-			$scriptVersion ?? null,
+			$version,
 		);
 
 		wp_enqueue_script(
 			$handle,
 			App::url('dist/assets/setting-page/index.js'),
-			$asset['dependencies'] ?? [],
-			$scriptVersion ?? null,
+			$dependencies,
+			$version,
 			true,
 		);
 

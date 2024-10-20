@@ -22,6 +22,11 @@
             "PluginName\\": "app/"
         }
     },
+    "autoload-dev": {
+        "files": [
+            "inc/bootstrap/dev.php"
+        ]
+    },
     "require": {
         "php": ">=7.4",
         "syntatis/codex": "dev-main",
@@ -67,7 +72,6 @@
     "archive": {
         "exclude": [
             "*.config.*",
-            "*.dev.php",
             "*.inc.php",
             "*.lock",
             "*.map",
@@ -76,6 +80,7 @@
             ".*",
             "LICENSE",
             "composer.json",
+            "dev.php",
             "node_modules",
             "package-lock.json",
             "package.json",
