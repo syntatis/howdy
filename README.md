@@ -66,6 +66,12 @@ Commands are available to help you with the development process. You can run the
 		</tr>
 </table>
 
+## Plugins 
+
+Some plugins that are built using Howdy:
+
+- [Feature Flipper](https://wordpress.org/plugins/syntatis-feature-flipper/): Easily switch some features in WordPress, on and off.
+
 ## References
 
 - [WordPress Plugin Handbook](https://developer.wordpress.org/plugins/) for plugin guidelines.
