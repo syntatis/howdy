@@ -48,6 +48,10 @@ Commands are available to help you with the development process. You can run the
         <th>Description</th>
     </thead>
     <tbody>
+		<tr>
+            <td><code>composer&nbsp;archive:zip</code></td>
+            <td>Creates a zip archive of the plugin files.</td>
+        </tr>
         <tr>
             <td><code>composer&nbsp;scoper</code></td>
             <td>Scopes the plugin Composer dependencies to prevent namespace conflicts with other plugins.</td>
