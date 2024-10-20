@@ -57,6 +57,10 @@ Commands are available to help you with the development process. You can run the
             <td>Run the plugin build process for production i.e. updating the translation POT file, and prefixing namespace.</td>
 		</tr>
 		<tr>
+            <td><code>composer&nbsp;archive:zip</code></td>
+            <td>Creates a zip archive of the plugin files.</td>
+        </tr>
+		<tr>
 			<td><code>npm&nbsp;run&nbsp;start</code></td>
 			<td>Compiles the assets, like the stylesheets and the JavaScript files, and watches for the changes within the files to recompile them automatically.</td>
 		</tr>
