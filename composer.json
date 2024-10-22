@@ -44,20 +44,20 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "archive:zip": "@composer archive --format=zip --file=plugin-name",
         "build": [
             "wp i18n make-pot --exclude=vendor,dist . inc/languages/plugin-name.pot",
             "codex scoper:init --yes --no-dev"
         ],
         "phpcs": "phpcs",
         "phpcs:fix": "phpcbf",
+        "plugin:zip": "@composer archive --format=zip",
         "scoper": "codex scoper:init"
     },
     "scripts-descriptions": {
-        "archive:zip": "Create a zip archive of the plugin",
         "build": "Build the plugin for production",
         "phpcs": "Check the codebase for coding standards violations",
         "phpcs:fix": "Fix coding standards violations",
+        "plugin:zip": "Create a zip file of the plugin for distribution",
         "scoper": "Scope dependencies namespace with a prefix"
     },
     "config": {

@@ -48,10 +48,6 @@ Commands are available to help you with the development process. You can run the
         <th>Description</th>
     </thead>
     <tbody>
-		<tr>
-            <td><code>composer&nbsp;archive:zip</code></td>
-            <td>Creates a zip archive of the plugin files.</td>
-        </tr>
         <tr>
             <td><code>composer&nbsp;scoper</code></td>
             <td>Scopes the plugin Composer dependencies to prevent namespace conflicts with other plugins.</td>
@@ -68,6 +64,11 @@ Commands are available to help you with the development process. You can run the
 			<td><code>npm&nbsp;run&nbsp;build</code></td>
 			<td>Builds the assets for production. It compiles the assets, like the stylesheets and the JavaScript files, and minifies them for production use.</td>
 		</tr>
+		<tr>
+            <td><code>composer&nbsp;plugin:zip</code></td>
+            <td>Creates a zip file of the plugin for distribution.</td>
+        </tr>
+	</tbody>
 </table>
 
 ## Plugins 
