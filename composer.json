@@ -45,7 +45,7 @@
     "prefer-stable": true,
     "scripts": {
         "build": [
-            "wp i18n make-pot --exclude=vendor,dist . inc/languages/plugin-name.pot",
+            "wp i18n make-pot --exclude=vendor,dist,build . inc/languages/plugin-name.pot",
             "codex scoper:init --yes --no-dev"
         ],
         "phpcs": "phpcs",
