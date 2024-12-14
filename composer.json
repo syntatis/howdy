@@ -88,6 +88,7 @@
             "package-lock.json",
             "package.json",
             "src",
+            "tests",
             "vendor",
             "vendor-bin",
             "!dist/autoload/composer.json",
