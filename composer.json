@@ -36,10 +36,13 @@
         "bamarni/composer-bin-plugin": "^1.8",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "phpcompatibility/phpcompatibility-wp": "^2.1",
-        "symfony/var-dumper": "^5.4",
         "syntatis/codex-companion": "dev-main",
         "syntatis/coding-standard": "^1.4",
         "wp-cli/i18n-command": "^2.6"
+    },
+    "suggest": {
+        "filp/whoops": "Provide better error handling in the browser",
+        "nunomaduro/collision": "Provide better error handling in the console"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
