@@ -42,7 +42,8 @@
     },
     "suggest": {
         "filp/whoops": "Provide better error handling in the browser",
-        "nunomaduro/collision": "Provide better error handling in the console"
+        "nunomaduro/collision": "Provide better error handling in the console",
+        "symfony/var-dumper": "Provide better debugging output"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -106,10 +107,7 @@
         },
         "codex": {
             "scoper": {
-                "prefix": "PluginName\\Vendor",
-                "install-dev": [
-                    "symfony/var-dumper"
-                ]
+                "prefix": "PluginName\\Vendor"
             }
         }
     }
