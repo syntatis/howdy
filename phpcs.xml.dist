@@ -60,6 +60,9 @@
 	<rule ref="PHPCompatibilityWP"/>
 
 	<!-- Exclude files -->
+	<rule ref="Generic.Files.InlineHTML.Found">
+		<exclude-pattern>/inc/views/*.php</exclude-pattern>
+	</rule>
 	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes.DeclareStrictTypesMissing">
 		<exclude-pattern>/inc/bootstrap/providers.php</exclude-pattern>
 		<exclude-pattern>/inc/config/*.php</exclude-pattern>

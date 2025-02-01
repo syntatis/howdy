@@ -53,34 +53,8 @@ class SettingPage implements Hookable
 			__('Howdy', 'plugin-name'),
 			'manage_options',
 			App::name(),
-			[$this, 'render'],
+			static fn () => include_once App::dir('inc/views/setting-page.php'),
 		);
-	}
-
-	/**
-	 * Render the plugin settings page.
-	 *
-	 * Called when user navigates to the plugin settings page. It will render
-	 * only with these HTML. The setting form, inputs, buttons will all be
-	 * rendered with React components.
-	 *
-	 * @see ./src/setting-page/Page.jsx
-	 */
-	public function render(): void
-	{
-		// phpcs:disable Generic.Files.InlineHTML.Found
-		?>
-		<div class="wrap">
-			<h1><?php echo esc_html(get_admin_page_title()); ?></h1>
-			<div id="<?php echo esc_attr(App::name()); ?>-settings"></div>
-			<noscript>
-				<p>
-					<?php esc_html_e('This setting page requires JavaScript to be enabled in your browser. Please enable JavaScript and reload the page.', 'plugin-name'); ?>
-				</p>
-			</noscript>
-		</div>
-		<?php
-		// phpcs:enable
 	}
 
 	/** @param string $adminPage The current admin page. */
