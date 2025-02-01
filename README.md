@@ -75,7 +75,7 @@ Commands are available to help you with the development process. You can run the
 
 Some plugins that are built using Howdy:
 
-- 🚦 [Feature Flipper](https://wordpress.org/plugins/syntatis-feature-flipper/): Easily switch some features in WordPress, on and off.
+- 🚦 [Feature Flipper](https://wordpress.org/plugins/syntatis-feature-flipper/): Disable Comments, Gutenberg, Emojis, and other features you don't need in WordPress®.
 
 ## References
 
