@@ -8,7 +8,7 @@
 ## Requirements
 
 - PHP 7.4 or higher
-- Node.js 18 or higher
+- Node.js 20 or higher
 - [Composer](https://getcomposer.org)
 
 ## Usage
