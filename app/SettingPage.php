@@ -27,7 +27,7 @@ use const ARRAY_FILTER_USE_KEY;
  *
  * Feel free to remove this or modify it to suit your needs.
  */
-class SettingPage implements Hookable
+final class SettingPage implements Hookable
 {
 	private Settings $settings;
 

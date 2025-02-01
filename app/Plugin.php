@@ -15,7 +15,7 @@ use PluginName\Vendor\Psr\Container\ContainerInterface;
  * of core functionalities manages activation, deactivation and update
  * processes.
  */
-class Plugin implements Extendable
+final class Plugin implements Extendable
 {
 	/**
 	 * Provide the plugin's feature to instantiate.
