@@ -36,7 +36,7 @@
         "bamarni/composer-bin-plugin": "^1.8",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "phpcompatibility/phpcompatibility-wp": "^2.1",
-        "syntatis/codex-companion": "^0.1",
+        "syntatis/codex-companion": "dev-main",
         "syntatis/coding-standard": "^1.4",
         "wp-cli/i18n-command": "^2.6"
     },
@@ -60,6 +60,7 @@
     },
     "scripts-descriptions": {
         "build": "Build the plugin for production",
+        "make-pot": "Generate the POT file for translations",
         "phpcs": "Check the codebase for coding standards violations",
         "phpcs:fix": "Fix coding standards violations",
         "plugin:zip": "Create a zip file of the plugin for distribution",
