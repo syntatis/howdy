@@ -73,7 +73,7 @@ Commands are available to help you with the development process. You can run the
 
 ## Plugins 
 
-Some plugins that are built using Howdy:
+List of plugins built with Howdy:
 
 - 🚦 [Feature Flipper](https://wordpress.org/plugins/syntatis-feature-flipper/): Disable Comments, Gutenberg, Emojis, and other features you don't need in WordPress®.
 
