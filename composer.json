@@ -52,7 +52,7 @@
             "codex scoper:init --yes --no-dev",
             "@make-pot"
         ],
-        "make-pot": "wp i18n make-pot --exclude=vendor,dist,build . inc/languages/syntatis-feature-flipper.pot",
+        "make-pot": "wp i18n make-pot --exclude=vendor,dist . inc/languages/plugin-name.pot",
         "phpcs": "phpcs",
         "phpcs:fix": "phpcbf",
         "plugin:zip": "@composer archive --format=zip",
