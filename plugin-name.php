@@ -12,7 +12,7 @@ declare(strict_types=1);
  * Plugin URI:        https://example.org
  * Description:       The plugin short description.
  * Version:           0.1.0
- * Requires at least: 5.8
+ * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Author Name
  * Author URI:        https://example.org
