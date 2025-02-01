@@ -23,8 +23,8 @@
 	<!-- Show the warning but exit with 0. The Warning is fine -->
 	<config name="ignore_warnings_on_exit" value="1"/>
 
-	<!-- Check for cross-version support for WordPress 5.8 or higher. -->
-	<config name="minimum_wp_version" value="5.8"/>
+	<!-- Check for cross-version support for WordPress 6.0 or higher. -->
+	<config name="minimum_wp_version" value="6.0"/>
 
 	<!-- Check for cross-version support for PHP 7.4 or higher. Requires PHPCompatibilityWP -->
 	<config name="testVersion" value="7.4-"/>
