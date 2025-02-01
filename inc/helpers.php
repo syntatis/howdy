@@ -17,3 +17,8 @@ declare(strict_types=1);
  */
 
 namespace PluginName;
+
+// If this file is called directly, abort.
+if (! defined('ABSPATH')) {
+	exit;
+}
