@@ -13,12 +13,8 @@
         "plugin",
         "boilerplate"
     ],
-    "engines": {
-        "node": ">=20",
-        "npm": ">=10"
-    },
     "dependencies": {
-        "@syntatis/kubrick": "^0.1.0-beta.14",
+        "@syntatis/kubrick": "^0.1.0",
         "@wordpress/api-fetch": "^7.17.0",
         "@wordpress/dom-ready": "^4.17.0",
         "@wordpress/element": "^6.17.0",
