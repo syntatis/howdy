@@ -1,6 +1,6 @@
 # 👋 Howdy
 
-**Howdy** is a starter kit for creating WordPress plugins. It provides a boilerplate structure with pre-configured tools to help you start developing plugins using modern PHP practices like namespaces and [PSR-4 Autoloading](https://www.php-fig.org/psr/psr-4/) with [Composer](https://getcomposer.org), [PHP Code Sniffer (PHPCS)](https://github.com/PHPCSStandards/PHP_CodeSniffer), and Dependency Injection (DI) Containers—without the hassle of setting everything up from scratch.
+**Howdy** is a starter kit for creating WordPress plugins. It provides a boilerplate structure with pre-configured tools to help you start developing plugins using modern PHP practices like [PSR-4 Autoloading](https://www.php-fig.org/psr/psr-4/) with [Composer](https://getcomposer.org), [PHP Code Sniffer (PHPCS)](https://github.com/PHPCSStandards/PHP_CodeSniffer), and Dependency Injection (DI) Containers—without the hassle of setting everything up from scratch.
 
 ## Requirements
 
