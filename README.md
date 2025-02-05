@@ -55,7 +55,7 @@ Commands are available to help you with the development process. You can run the
 		</tr>
 		<tr>
             <td><code>composer&nbsp;plugin:zip</code></td>
-            <td>Creates a zip file of the plugin for distribution.</td>
+            <td>Creates a zip file of the plugin for distribution. This command is based on the Composer <code>archive</code> command. <a href="https://getcomposer.org/doc/03-cli.md#archive" target="blank" rel="noopener">Refer to the documentation</a> for the available options to run the command.</td>
         </tr>
 		<tr>
 			<td><code>npm&nbsp;run&nbsp;start</code></td>
