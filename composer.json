@@ -30,10 +30,9 @@
         "syntatis/codex-settings-provider": "^0.1"
     },
     "require-dev": {
-        "bamarni/composer-bin-plugin": "^1.8",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "phpcompatibility/phpcompatibility-wp": "^2.1",
-        "syntatis/codex-companion": "^0.1",
+        "syntatis/codex-companion": "^0.2",
         "syntatis/coding-standard": "^1.4",
         "wp-cli/i18n-command": "^2.6"
     },
@@ -65,7 +64,6 @@
     },
     "config": {
         "allow-plugins": {
-            "bamarni/composer-bin-plugin": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "syntatis/codex-companion": true
         },
@@ -99,10 +97,6 @@
         ]
     },
     "extra": {
-        "bamarni-bin": {
-            "bin-links": true,
-            "forward-command": true
-        },
         "codex": {
             "scoper": {
                 "prefix": "PluginName\\Vendor"
