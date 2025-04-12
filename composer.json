@@ -13,7 +13,7 @@
             "homepage": "https://github.com/tfirdaus"
         }
     ],
-    "license": "GPL-3.0",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "PluginName\\": "app/"
@@ -26,13 +26,13 @@
     },
     "require": {
         "php": "^7.4 || ^8.0",
-        "syntatis/codex": "^0.1",
-        "syntatis/codex-settings-provider": "^0.1"
+        "syntatis/codex": "^0.2",
+        "syntatis/codex-settings-provider": "^0.2"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "phpcompatibility/phpcompatibility-wp": "^2.1",
-        "syntatis/codex-companion": "v0.2.2",
+        "syntatis/codex-companion": "^0.2.2",
         "syntatis/coding-standard": "^1.4",
         "wp-cli/i18n-command": "^2.6"
     },
