@@ -16,8 +16,8 @@ declare(strict_types=1);
  * Requires PHP:      7.4
  * Author:            Author Name
  * Author URI:        https://example.org
- * License:           MIT
- * License URI:       https://opensource.org/license/mit
+ * License:           GPL-3.0
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       plugin-name
  * Domain Path:       /inc/languages
  */
