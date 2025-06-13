@@ -32,8 +32,8 @@
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "phpcompatibility/phpcompatibility-wp": "^2.1",
-        "syntatis/codex-companion": "v0.2.2",
-        "syntatis/coding-standard": "^1.4",
+        "syntatis/codex-companion": "^0.2",
+        "syntatis/coding-standard": "^2.0",
         "wp-cli/i18n-command": "^2.6"
     },
     "suggest": {
