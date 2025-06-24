@@ -14,7 +14,7 @@
         "boilerplate"
     ],
     "dependencies": {
-        "@syntatis/kubrick": "^0.1.0",
+        "@syntatis/kubrick": "^0.2.0",
         "@wordpress/api-fetch": "^7.17.0",
         "@wordpress/dom-ready": "^4.17.0",
         "@wordpress/element": "^6.17.0",
