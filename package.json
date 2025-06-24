@@ -15,13 +15,13 @@
     ],
     "dependencies": {
         "@syntatis/kubrick": "^0.2.0",
-        "@wordpress/api-fetch": "^7.17.0",
-        "@wordpress/dom-ready": "^4.17.0",
-        "@wordpress/element": "^6.17.0",
-        "@wordpress/i18n": "^5.17.0"
+        "@wordpress/api-fetch": "^7.25.0",
+        "@wordpress/dom-ready": "^4.25.0",
+        "@wordpress/element": "^6.25.0",
+        "@wordpress/i18n": "^5.25.0"
     },
     "devDependencies": {
-        "@wordpress/scripts": "^30.10.0",
+        "@wordpress/scripts": "^30.18.0",
         "cross-env": "^7.0.3"
     },
     "scripts": {
@@ -29,6 +29,7 @@
         "build": "cross-env NODE_ENV=production wp-scripts build --output-path=dist/assets",
         "lint:js": "wp-scripts lint-js ./src",
         "lint:css": "wp-scripts lint-style ./src",
-        "format": "wp-scripts format"
+        "format": "wp-scripts format",
+        "update-packages": "wp-scripts packages-update"
     }
 }
