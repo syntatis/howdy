@@ -1,105 +1,105 @@
 {
-    "name": "syntatis/howdy",
-    "description": "Build your next modern plugin for WordPress®",
-    "type": "wordpress-plugin",
-    "keywords": [
-        "wordpress",
-        "plugin",
-        "boilerplate"
-    ],
-    "authors": [
-        {
-            "name": "Thoriq Firdaus",
-            "homepage": "https://github.com/tfirdaus"
-        }
-    ],
-    "license": "GPL-3.0",
-    "autoload": {
-        "psr-4": {
-            "PluginName\\": "app/"
-        }
-    },
-    "autoload-dev": {
-        "files": [
-            "inc/bootstrap/dev.php"
-        ]
-    },
-    "require": {
-        "php": "^7.4 || ^8.0",
-        "syntatis/codex": "^0.3",
-        "syntatis/codex-settings-provider": "^0.3"
-    },
-    "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-        "phpcompatibility/phpcompatibility-wp": "^2.1",
-        "syntatis/codex-companion": "^0.3",
-        "syntatis/coding-standard": "^2.0",
-        "wp-cli/i18n-command": "^2.6"
-    },
-    "suggest": {
-        "filp/whoops": "Provide better error handling in the browser",
-        "nunomaduro/collision": "Provide better error handling in the console",
-        "symfony/var-dumper": "Provide better debugging output"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts": {
-        "build": [
-            "codex scoper:init --yes --no-dev",
-            "@make-pot"
-        ],
-        "format": "phpcbf",
-        "lint": "phpcs",
-        "make-pot": "wp i18n make-pot --exclude=vendor,dist . inc/languages/plugin-name.pot",
-        "scope": "codex scoper:init",
-        "zip": "@composer archive --format=zip"
-    },
-    "scripts-descriptions": {
-        "build": "Build the plugin for production",
-        "format": "Fix coding standards violations",
-        "lint": "Check the codebase for coding standards violations",
-        "make-pot": "Generate the POT file for translations",
-        "scope": "Scope dependencies namespace with a prefix",
-        "zip": "Create a zip file of the plugin for distribution"
-    },
-    "config": {
-        "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "syntatis/codex-companion": true
-        },
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "archive": {
-        "exclude": [
-            "*.config.*",
-            "*.dist",
-            "*.neon",
-            "*.inc.php",
-            "*.lock",
-            "*.map",
-            "*.md",
-            "*.xml*",
-            "*.zip",
-            ".*",
-            "LICENSE",
-            "composer.json",
-            "dev.php",
-            "node_modules",
-            "package-lock.json",
-            "package.json",
-            "src",
-            "tests",
-            "vendor",
-            "!dist/autoload/composer.json",
-            "!dist/autoload/vendor"
-        ]
-    },
-    "extra": {
-        "codex": {
-            "scoper": {
-                "prefix": "PluginName\\Vendor"
-            }
-        }
-    }
+	"name": "syntatis/howdy",
+	"description": "Build your next modern plugin for WordPress®",
+	"type": "wordpress-plugin",
+	"keywords": [
+		"wordpress",
+		"plugin",
+		"boilerplate"
+	],
+	"authors": [
+		{
+			"name": "Thoriq Firdaus",
+			"homepage": "https://github.com/tfirdaus"
+		}
+	],
+	"license": "GPL-3.0",
+	"autoload": {
+		"psr-4": {
+			"PluginName\\": "app/"
+		}
+	},
+	"autoload-dev": {
+		"files": [
+			"inc/bootstrap/dev.php"
+		]
+	},
+	"require": {
+		"php": "^7.4 || ^8.0",
+		"syntatis/codex": "^0.3",
+		"syntatis/codex-settings-provider": "^0.3"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"syntatis/codex-companion": "^0.3",
+		"syntatis/coding-standard": "^2.0",
+		"wp-cli/i18n-command": "^2.6"
+	},
+	"suggest": {
+		"filp/whoops": "Provide better error handling in the browser",
+		"nunomaduro/collision": "Provide better error handling in the console",
+		"symfony/var-dumper": "Provide better debugging output"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"scripts": {
+		"build": [
+			"codex scoper:init --yes --no-dev",
+			"@make-pot"
+		],
+		"format": "phpcbf",
+		"lint": "phpcs",
+		"make-pot": "wp i18n make-pot --exclude=vendor,dist . inc/languages/plugin-name.pot",
+		"scope": "codex scoper:init",
+		"zip": "@composer archive --format=zip"
+	},
+	"scripts-descriptions": {
+		"build": "Build the plugin for production",
+		"format": "Fix coding standards violations",
+		"lint": "Check the codebase for coding standards violations",
+		"make-pot": "Generate the POT file for translations",
+		"scope": "Scope dependencies namespace with a prefix",
+		"zip": "Create a zip file of the plugin for distribution"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"syntatis/codex-companion": true
+		},
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
+	"archive": {
+		"exclude": [
+			"*.config.*",
+			"*.dist",
+			"*.neon",
+			"*.inc.php",
+			"*.lock",
+			"*.map",
+			"*.md",
+			"*.xml*",
+			"*.zip",
+			".*",
+			"LICENSE",
+			"composer.json",
+			"dev.php",
+			"node_modules",
+			"package-lock.json",
+			"package.json",
+			"src",
+			"tests",
+			"vendor",
+			"!dist/autoload/composer.json",
+			"!dist/autoload/vendor"
+		]
+	},
+	"extra": {
+		"codex": {
+			"scoper": {
+				"prefix": "PluginName\\Vendor"
+			}
+		}
+	}
 }

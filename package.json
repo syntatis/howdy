@@ -1,35 +1,35 @@
 {
-    "name": "@syntatis/howdy",
-    "version": "0.1.0",
-    "description": "Build your next modern plugin for WordPress®",
-    "author": {
-        "name": "Thoriq Firdaus",
-        "url": "https://github.com/tfirdaus"
-    },
-    "private": true,
-    "license": "GPL-3.0",
-    "keywords": [
-        "wordpress",
-        "plugin",
-        "boilerplate"
-    ],
-    "dependencies": {
-        "@syntatis/kubrick": "^0.2.0",
-        "@wordpress/api-fetch": "^7.25.0",
-        "@wordpress/dom-ready": "^4.25.0",
-        "@wordpress/element": "^6.25.0",
-        "@wordpress/i18n": "^5.25.0"
-    },
-    "devDependencies": {
-        "@wordpress/scripts": "^30.18.0",
-        "cross-env": "^7.0.3"
-    },
-    "scripts": {
-        "start": "wp-scripts start --output-path=dist/assets",
-        "build": "cross-env NODE_ENV=production wp-scripts build --output-path=dist/assets",
-        "lint:js": "wp-scripts lint-js ./src",
-        "lint:css": "wp-scripts lint-style ./src",
-        "format": "wp-scripts format",
-        "update-packages": "wp-scripts packages-update"
-    }
+	"name": "@syntatis/howdy",
+	"version": "0.1.0",
+	"description": "Build your next modern plugin for WordPress®",
+	"author": {
+		"name": "Thoriq Firdaus",
+		"url": "https://github.com/tfirdaus"
+	},
+	"private": true,
+	"license": "GPL-3.0",
+	"keywords": [
+		"wordpress",
+		"plugin",
+		"boilerplate"
+	],
+	"dependencies": {
+		"@syntatis/kubrick": "^0.2.0",
+		"@wordpress/api-fetch": "^7.25.0",
+		"@wordpress/dom-ready": "^4.25.0",
+		"@wordpress/element": "^6.25.0",
+		"@wordpress/i18n": "^5.25.0"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^30.18.0",
+		"cross-env": "^7.0.3"
+	},
+	"scripts": {
+		"start": "wp-scripts start --output-path=dist/assets",
+		"build": "cross-env NODE_ENV=production wp-scripts build --output-path=dist/assets",
+		"lint:js": "wp-scripts lint-js ./src",
+		"lint:css": "wp-scripts lint-style ./src",
+		"format": "wp-scripts format",
+		"update-packages": "wp-scripts packages-update"
+	}
 }

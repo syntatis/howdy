@@ -9,14 +9,14 @@ indent_style = tab
 indent_size = 4
 
 [*.json]
-indent_style = space
+indent_size = 2
 
-[*.{yml,yaml}]
+[*.{.md,neon,neon.dist,yml,yaml}]
 indent_style = space
 indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
 
-[{*.txt,wp-config-sample.php}]
+[{*.txt}]
 end_of_line = crlf
