@@ -26,13 +26,13 @@
     },
     "require": {
         "php": "^7.4 || ^8.0",
-        "syntatis/codex": "^0.1",
-        "syntatis/codex-settings-provider": "^0.1"
+        "syntatis/codex": "^0.3",
+        "syntatis/codex-settings-provider": "^0.3"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "phpcompatibility/phpcompatibility-wp": "^2.1",
-        "syntatis/codex-companion": "^0.2",
+        "syntatis/codex-companion": "^0.3",
         "syntatis/coding-standard": "^2.0",
         "wp-cli/i18n-command": "^2.6"
     },
@@ -48,19 +48,19 @@
             "codex scoper:init --yes --no-dev",
             "@make-pot"
         ],
+        "format": "phpcbf",
+        "lint": "phpcs",
         "make-pot": "wp i18n make-pot --exclude=vendor,dist . inc/languages/plugin-name.pot",
-        "phpcs": "phpcs",
-        "phpcs:fix": "phpcbf",
-        "plugin:zip": "@composer archive --format=zip",
-        "scoper": "codex scoper:init"
+        "scope": "codex scoper:init",
+        "zip": "@composer archive --format=zip"
     },
     "scripts-descriptions": {
         "build": "Build the plugin for production",
+        "format": "Fix coding standards violations",
+        "lint": "Check the codebase for coding standards violations",
         "make-pot": "Generate the POT file for translations",
-        "phpcs": "Check the codebase for coding standards violations",
-        "phpcs:fix": "Fix coding standards violations",
-        "plugin:zip": "Create a zip file of the plugin for distribution",
-        "scoper": "Scope dependencies namespace with a prefix"
+        "scope": "Scope dependencies namespace with a prefix",
+        "zip": "Create a zip file of the plugin for distribution"
     },
     "config": {
         "allow-plugins": {
@@ -91,7 +91,6 @@
             "src",
             "tests",
             "vendor",
-            "vendor-bin",
             "!dist/autoload/composer.json",
             "!dist/autoload/vendor"
         ]

@@ -46,7 +46,7 @@ Commands are available to help you with the development process. You can run the
     </thead>
     <tbody>
         <tr>
-            <td><code>composer&nbsp;scoper</code></td>
+            <td><code>composer&nbsp;scope</code></td>
             <td>Scopes the plugin Composer dependencies to prevent namespace conflicts with other plugins.</td>
         </tr>
 		<tr>
@@ -54,7 +54,7 @@ Commands are available to help you with the development process. You can run the
             <td>Run the plugin build process for production i.e. updating the translation POT file, and prefixing namespace.</td>
 		</tr>
 		<tr>
-            <td><code>composer&nbsp;plugin:zip</code></td>
+            <td><code>composer&nbsp;zip</code></td>
             <td>Creates a zip file of the plugin for distribution. Based on the Composer <code>archive</code>. <a href="https://getcomposer.org/doc/03-cli.md#archive" target="blank" rel="noopener">Refer to the documentation</a> for the available options to run the command.</td>
         </tr>
 		<tr>
