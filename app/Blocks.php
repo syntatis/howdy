@@ -19,12 +19,12 @@ final class Blocks
 {
 	private RecursiveDirectoryIterator $blocks;
 
-	public function __construct()
+	public function init(): void
 	{
-		add_action('init', fn () => $this->registerBlocks());
+		add_action('init', [$this, 'registerBlocks']);
 	}
 
-	private function registerBlocks(): void
+	public function registerBlocks(): void
 	{
 		if (! is_dir(PLUGIN_DIR . '/dist/assets')) {
 			return;
