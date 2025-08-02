@@ -4,15 +4,17 @@
 
 ## Features
 
-* [PSR-4 Autoloading](https://www.php-fig.org/psr/psr-4/) with [Composer](https://getcomposer.org)
-* [PHP Code Sniffer (PHPCS)](https://github.com/PHPCSStandards/PHP_CodeSniffer) for code style checking
-* [PHP-Scoper](https://github.com/humbug/php-scoper) for scoping the plugin dependencies
+* [PSR-4 Autoloading](https://www.php-fig.org/psr/psr-4/) with [Composer](https://getcomposer.org), for automatic class loading.
+* [PHP Code Sniffer (PHPCS)](https://github.com/PHPCSStandards/PHP_CodeSniffer), for code style checking.
+* [PHP-Scoper](https://github.com/humbug/php-scoper), for scoping the plugin dependencies.
+* [@wordpress/scripts](https://www.npmjs.com/package/@wordpress/scripts), for JavaScript tooling, e.g. ESLint, and asset compilation.
+* [@syntatis/kubrick](https://www.npmjs.com/package/@syntatis/kubrick), for building classic WordPress® admin application interface with React.js.
 
 ## Requirements
 
-- PHP 7.4 or higher
-- Node.js 20 or higher
-- [Composer](https://getcomposer.org)
+* PHP 7.4 or higher
+* [Composer](https://getcomposer.org)
+* Node.js 20 or higher
 
 ## Usage
 
