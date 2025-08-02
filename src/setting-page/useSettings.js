@@ -42,13 +42,6 @@ export const useSettings = () => {
 	const [ updating, setUpdating ] = useState( false );
 	const [ errorMessages, setErrorMessages ] = useState( {} );
 
-	/**
-	 * @param {string} name The option name.
-	 */
-	function getOption( name ) {
-		return values[ name ];
-	}
-
 	useEffect( () => {
 		if ( updating ) {
 			setErrorMessages( {} );
@@ -99,6 +92,5 @@ export const useSettings = () => {
 			updateValues( newValues );
 		},
 		updateStatus: setStatus,
-		getOption,
 	};
 };

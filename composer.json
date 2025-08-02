@@ -19,15 +19,8 @@
 			"PluginName\\": "app/"
 		}
 	},
-	"autoload-dev": {
-		"files": [
-			"inc/bootstrap/dev.php"
-		]
-	},
 	"require": {
-		"php": "^7.4 || ^8.0",
-		"syntatis/codex": "^0.3",
-		"syntatis/codex-settings-provider": "^0.3"
+		"php": "^7.4 || ^8.0"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",

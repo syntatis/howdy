@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace PluginName;
 
-use PluginName\Vendor\Codex;
-
 use function defined;
+use function is_object;
+use function method_exists;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
@@ -33,7 +33,12 @@ require PLUGIN_DIR . '/dist/autoload/vendor/scoper-autoload.php';
 /**
  * Initialize the plugin application.
  */
-(new Codex\Plugin(new Plugin()))
-	->setPluginFilePath(PLUGIN_FILE)
-	->addServices(include PLUGIN_DIR . '/inc/bootstrap/providers.php')
-	->boot();
+$app = new Plugin();
+
+foreach ($app as $instance) {
+	if (! is_object($instance) || ! method_exists($instance, 'init')) {
+		continue;
+	}
+
+	$instance->init();
+}
