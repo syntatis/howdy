@@ -4,10 +4,9 @@ return [
 	/**
 	 * The plugin name.
 	 *
-	 * The plugin name config is required and has to be unique, since it will
-	 * be used as an identifier for the plugin in various occasions, such
-	 * as when enqueueing scripts and styles, registering settings, and
-	 * more.
+	 * The plugin name setting is required and must be unique. It will be used
+	 * as the plugin identifier, such as when enqueueing the plugin scripts
+	 * and styles, registering settings, and more.
 	 */
 	'name' => 'plugin-name',
 
