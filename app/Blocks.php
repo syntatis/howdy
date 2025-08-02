@@ -8,6 +8,13 @@ use RecursiveDirectoryIterator;
 
 use function is_dir;
 
+/**
+ * The `Blocks` class.
+ *
+ * Serves as the entry point for registering custom blocks in the plugin.
+ *
+ * Feel free to modify it to suit your needs.
+ */
 final class Blocks
 {
 	private RecursiveDirectoryIterator $blocks;
