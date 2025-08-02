@@ -18,8 +18,6 @@ use Traversable;
  */
 final class Plugin implements IteratorAggregate
 {
-	private string $basename;
-
 	public function __construct()
 	{
 		load_plugin_textdomain('plugin-name', false, plugin_basename(PLUGIN_FILE) . '/inc/languages/');
