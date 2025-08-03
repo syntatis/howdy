@@ -15,14 +15,14 @@
 	],
 	"dependencies": {
 		"@syntatis/kubrick": "^0.2.0",
-		"@wordpress/api-fetch": "^7.25.0",
-		"@wordpress/dom-ready": "^4.25.0",
-		"@wordpress/element": "^6.25.0",
-		"@wordpress/i18n": "^5.25.0"
+		"@wordpress/api-fetch": "^7.27.0",
+		"@wordpress/dom-ready": "^4.27.0",
+		"@wordpress/element": "^6.27.0",
+		"@wordpress/i18n": "^6.0.0"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.18.0",
-		"cross-env": "^7.0.3"
+		"@wordpress/scripts": "^30.20.0",
+		"cross-env": "^10.0.0"
 	},
 	"scripts": {
 		"start": "wp-scripts start --output-path=dist/assets",
