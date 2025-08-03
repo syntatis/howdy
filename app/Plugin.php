@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace PluginName;
 
-use PluginName\Vendor\Codex\Contracts\Extendable;
-use PluginName\Vendor\Codex\Settings\Settings;
-use PluginName\Vendor\Psr\Container\ContainerInterface;
+use IteratorAggregate;
+use Traversable;
 
 /**
  * The `Plugin` class.
@@ -14,26 +13,53 @@ use PluginName\Vendor\Psr\Container\ContainerInterface;
  * Serves as the main entry point for plugin, handling the initialization
  * of core functionalities manages activation, deactivation and update
  * processes.
+ *
+ * Feel free to modify it to suit your needs.
  */
-final class Plugin implements Extendable
+final class Plugin implements IteratorAggregate
 {
-	/**
-	 * Provide the plugin's feature to instantiate.
-	 *
-	 * The `ContainerInstance` passed in this method is the service container
-	 * that manages the "services" registered in the plugin. A service may
-	 * be any value, like a string, a number, an object, or a "factory"
-	 * that you can retrieve and pass on the classes or functions in
-	 * the plugin that depends on the "service".
-	 *
-	 * @see https://www.php-fig.org/psr/psr-11/ For `ContainerInterface` specification.
-	 *
-	 * @param ContainerInstance $container PSR-11 compatible service container.
-	 *
-	 * @return iterable<object>
-	 */
-	public function getInstances(ContainerInterface $container): iterable
+	public function __construct()
 	{
-		yield new SettingPage($container->get(Settings::class));
+		load_plugin_textdomain('plugin-name', false, plugin_basename(PLUGIN_FILE) . '/inc/languages/');
+		register_activation_hook(PLUGIN_FILE, fn () => $this->activate());
+		register_deactivation_hook(PLUGIN_FILE, fn () => $this->deactivate());
+	}
+
+	/**
+	 * Return a list of object to initialize.
+	 *
+	 * @return Traversable<object>
+	 */
+	public function getIterator(): Traversable
+	{
+		yield new Blocks();
+		yield new SettingPage();
+	}
+
+	/**
+	 * Perform actions required when the plugin is activated.
+	 *
+	 * @see https://developer.wordpress.org/plugins/plugin-basics/activation-deactivation-hooks/
+	 * @see https://developer.wordpress.org/reference/functions/register_activation_hook/
+	 */
+	private function activate(): void
+	{
+		/**
+		 * Do something, such as creating database tables, performing compatibility checks,
+		 * adding options, and flushing caches.
+		 */
+	}
+
+	/**
+	 * Perform actions required when the plugin is deactivated.
+	 *
+	 * @see https://developer.wordpress.org/plugins/plugin-basics/activation-deactivation-hooks/
+	 * @see https://developer.wordpress.org/reference/functions/register_deactivation_hook/
+	 */
+	private function deactivate(): void
+	{
+		/**
+		 * Do something, such as flushing caches and permalinks.
+		 */
 	}
 }

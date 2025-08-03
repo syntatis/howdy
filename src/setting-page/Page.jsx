@@ -18,7 +18,6 @@ export const Page = () => {
 		errorMessages,
 		updateStatus,
 		updateValues,
-		getOption,
 		values,
 	} = useSettings();
 
@@ -64,19 +63,14 @@ export const Page = () => {
 								<td>
 									<TextField
 										isInvalid={
-											errorMessages?.plugin_name_greeting ??
-											false
+											errorMessages?.greeting ?? false
 										}
-										errorMessage={
-											errorMessages?.plugin_name_greeting
-										}
+										errorMessage={ errorMessages?.greeting }
 										aria-labelledby="plugin-name-settings-greeting-label"
 										id="plugin-name-settings-greeting"
 										className="regular-text"
-										defaultValue={ getOption(
-											'plugin_name_greeting'
-										) }
-										name="plugin_name_greeting"
+										defaultValue={ values.greeting }
+										name="greeting"
 										description={ __(
 											'Enter a greeting to display.',
 											'plugin-name'

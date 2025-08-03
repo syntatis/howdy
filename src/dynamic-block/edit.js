@@ -10,6 +10,6 @@ import { useSettings } from '../setting-page/useSettings';
 export default function Edit() {
 	const { getOption } = useSettings();
 	return (
-		<p { ...useBlockProps() }>{ getOption( 'plugin_name_greeting' ) }</p>
+		<p { ...useBlockProps() }>{ getOption( 'greeting' ) }</p>
 	);
 }

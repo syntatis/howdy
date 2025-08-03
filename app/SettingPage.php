@@ -4,19 +4,11 @@ declare(strict_types=1);
 
 namespace PluginName;
 
-use PluginName\Vendor\Codex\Contracts\Hookable;
-use PluginName\Vendor\Codex\Facades\App;
-use PluginName\Vendor\Codex\Foundation\Hooks\Hook;
-use PluginName\Vendor\Codex\Settings\Settings;
 use WP_REST_Request;
 
-use function array_filter;
-use function array_keys;
 use function in_array;
 use function is_readable;
 use function sprintf;
-
-use const ARRAY_FILTER_USE_KEY;
 
 /**
  * The `SettingPage` class.
@@ -27,19 +19,28 @@ use const ARRAY_FILTER_USE_KEY;
  *
  * Feel free to remove this or modify it to suit your needs.
  */
-final class SettingPage implements Hookable
+final class SettingPage
 {
-	private Settings $settings;
-
-	public function __construct(Settings $settings)
+	public function init(): void
 	{
-		$this->settings = $settings;
+		add_action('admin_init', [$this, 'registerSettings']);
+		add_action('rest_api_init', [$this, 'registerSettings']);
+		add_action('admin_menu', [$this, 'addMenu']);
+		add_action('admin_enqueue_scripts', [$this, 'enqueueAdminScripts']);
 	}
 
-	public function hook(Hook $hook): void
+	public function registerSettings(): void
 	{
-		$hook->addAction('admin_menu', [$this, 'addMenu']);
-		$hook->addAction('admin_enqueue_scripts', [$this, 'enqueueAdminScripts']);
+		register_setting(
+			'plugin-name',
+			'greeting',
+			[
+				'type' => 'string',
+				'show_in_rest' => true,
+				'sanitize_callback' => 'sanitize_text_field',
+				'default' => 'Hello World!',
+			],
+		);
 	}
 
 	/**
@@ -49,11 +50,11 @@ final class SettingPage implements Hookable
 	{
 		add_submenu_page(
 			'options-general.php', // Parent slug.
-			__('Howdy Settings', 'plugin-name'),
-			__('Howdy', 'plugin-name'),
+			__('Plugin Name Settings', 'plugin-name'),
+			__('Plugin Name', 'plugin-name'),
 			'manage_options',
-			App::name(),
-			static fn () => include_once App::dir('inc/views/setting-page.php'),
+			'plugin-name',
+			static fn () => include_once PLUGIN_DIR . '/inc/views/setting-page.php',
 		);
 	}
 
@@ -64,7 +65,7 @@ final class SettingPage implements Hookable
 		 * List of admin pages where the plugin scripts and stylesheet should load.
 		 */
 		$adminPages = [
-			'settings_page_' . App::name(),
+			'settings_page_plugin-name',
 			'post.php',
 			'post-new.php',
 		];
@@ -73,22 +74,22 @@ final class SettingPage implements Hookable
 			return;
 		}
 
-		$handle = App::name() . '-settings';
-		$assets = App::dir('dist/assets/setting-page/index.asset.php');
+		$handle = 'plugin-name';
+		$assets = PLUGIN_DIR . '/dist/assets/setting-page/index.asset.php';
 		$assets = is_readable($assets) ? require $assets : [];
 		$version = $assets['version'] ?? null;
 		$dependencies = $assets['dependencies'] ?? [];
 
 		wp_enqueue_style(
 			$handle,
-			App::url('dist/assets/setting-page/index.css'),
+			plugin_dir_url(PLUGIN_FILE) . '/dist/assets/setting-page/index.css',
 			[],
 			$version,
 		);
 
 		wp_enqueue_script(
 			$handle,
-			App::url('dist/assets/setting-page/index.js'),
+			plugin_dir_url(PLUGIN_FILE) . '/dist/assets/setting-page/index.js',
 			$dependencies,
 			$version,
 			true,
@@ -104,27 +105,23 @@ final class SettingPage implements Hookable
 	}
 
 	/**
-	 * Provide the inline script content.
+	 * Load the inital data to show on the admin page.
 	 */
 	public function getInlineScript(): string
 	{
 		$request = new WP_REST_Request('GET', '/wp/v2/settings');
 		$response = rest_do_request($request);
-
-		/**
-		 * Filter the response data to only include those registered in the plugin
-		 * settings.
-		 */
-		$keys = array_keys($this->settings->get('general'));
-		$data = array_filter(
-			$response->get_data(),
-			static fn ($key): bool => in_array($key, $keys, true),
-			ARRAY_FILTER_USE_KEY,
-		);
+		$data = $response->get_data();
 
 		return sprintf(
 			'wp.apiFetch.use( wp.apiFetch.createPreloadingMiddleware( %s ) )',
-			wp_json_encode(['/wp/v2/settings' => ['body' => $data]]),
+			wp_json_encode([
+				'/wp/v2/settings' => [
+					'body' => [
+						'greeting' => $data['greeting'],
+					],
+				],
+			]),
 		);
 	}
 }
