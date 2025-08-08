@@ -11,7 +11,7 @@ indent_size = 4
 [*.json]
 indent_size = 2
 
-[*.{.md,neon,neon.dist,yml,yaml}]
+[*.{md,neon,neon.dist,yml,yaml}]
 indent_style = space
 indent_size = 2
 
