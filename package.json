@@ -21,7 +21,7 @@
 		"@wordpress/i18n": "^6.0.0"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.20.0",
+		"@wordpress/scripts": "^31.7.0",
 		"cross-env": "^10.0.0"
 	},
 	"scripts": {
