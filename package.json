@@ -14,14 +14,14 @@
 		"boilerplate"
 	],
 	"dependencies": {
-		"@syntatis/kubrick": "^0.2.0",
+		"@syntatis/kubrick": "^0.3.0",
 		"@wordpress/api-fetch": "^7.27.0",
 		"@wordpress/dom-ready": "^4.27.0",
-		"@wordpress/element": "^6.27.0",
+		"@wordpress/element": "^8.4.0",
 		"@wordpress/i18n": "^6.0.0"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.20.0",
+		"@wordpress/scripts": "^34.0.0",
 		"cross-env": "^10.0.0"
 	},
 	"scripts": {
