@@ -9,10 +9,10 @@ It scaffolds a modern WordPress plugin with PSR-4 autoloading, a couple of Guten
 ## Directory structure
 
 ```
-app/           # PHP classes (PSR-4, namespace PluginName)
-  Plugin.php   # Main plugin entry point (activation, deactivation, service iterator)
-  Blocks.php   # Registers custom Gutenberg blocks from dist/assets
-  SettingPage.php  # Example admin settings page (REST-aware)
+app/                 # PHP classes (PSR-4, namespace PluginName)
+  Plugin.php         # Plugin entry point (activation, deactivation, service iterator)
+  Blocks.php         # Registers custom Gutenberg blocks from dist/assets
+  SettingPage.php    # Example admin settings page (REST-aware)
 inc/
   bootstrap/app.php  # Boot file loaded by plugin-name.php
   languages/         # Translation POT file
@@ -95,7 +95,7 @@ add_submenu_page(
 ## Build and test commands
 
 | Command | Notes |
-|------|---------|-------|
+|---|---|
 | `npm run start` | Uses wp-scripts with custom webpack config |
 | `npm run build` | Sets `NODE_ENV=production` |
 | `npm run lint:js` | ESLint via wp-scripts |
