@@ -53,17 +53,17 @@ final class Plugin implements IteratorAggregate
    * ...existing codes...
    */
 
-	/**
-	 * Return a list of object to initialize.
-	 *
-	 * @return Traversable<object>
-	 */
-	public function getIterator(): Traversable
-	{
-		yield new Blocks();
-		yield new SettingPage();
+  /**
+   * Return a list of object to initialize.
+   *
+   * @return Traversable<object>
+   */
+  public function getIterator(): Traversable
+  {
+    yield new Blocks();
+    yield new SettingPage();
     yield new MyNewFeature(); // Add your new feature class here.
-	}
+  }
 
   /**
    * ...existing codes...
