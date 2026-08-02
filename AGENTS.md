@@ -2,7 +2,7 @@
 
 ## Project overview
 
-**Howdy** is a WordPress plugin boilerplate by [syntatis](https://github.com/syntatis).
+**Howdy** is a WordPress plugin boilerplate by [Syntatis](https://github.com/syntatis).
 
 It scaffolds a modern WordPress plugin with PSR-4 autoloading, a couple of Gutenberg block examples, a React-based settings page, and pre-configured tooling for linting, PHP dependency scoping, and i18n.
 
