@@ -32,7 +32,7 @@ vendor/              # Composer dependencies (scoped via PHP-Scoper)
 - Use **PHP 7.4+** with strict types (`declare(strict_types=1)`).
 - Follow **PSR-4** for class autoloading and namespaces.
 - Follow **PSR-12** as the base coding style, and refer to `phpcs.xml.dist` for the additional rules.
-- Follow **SOLID** principles with common design patterns like "Decorator", "Facade", "Adapter", etc. when applicable to ensure maintainable and testable code.
+- Follow **SOLID** principles with some common design patterns like "Decorator", "Facade", "Adapter", etc. when applicable to ensure maintainable and testable code.
 
 #### Creating a new feature
 
@@ -128,5 +128,7 @@ It's generally recommended to run the following commands:
 
 ## References
 
-- [Getting started with wp-scripts](https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-scripts/)
+- [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/)
+- [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
 - [PHP Design Patterns](https://refactoring.guru/design-patterns/php)
+- [Getting started with wp-scripts](https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-scripts/)
